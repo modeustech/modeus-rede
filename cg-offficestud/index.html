@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three JS 3D Scroll Experience | Codegrid</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="primary-nav">
+      <img src="./assets/Modeus secondary II.png" alt="Modeus logo" class="logo" />
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links">
+        <a href="./about.html">About us</a>
+        <a href="#configurator">3D Configurator</a>
+        <a href="#gallery">Brand</a>
+        <a href="#services">Services</a>
+      </div>
+      <button class="nav-cta">Get in touch</button>
+    </nav>
+
+    <section class="hero">
+      <p class="scroll-label left">Scroll down</p>
+      <div class="hero-content">
+        <p class="eyebrow">Short text about modeus blah blah blah</p>
+        <h1>
+          <span>Interior</span>
+          <span>Solutions</span>
+          <span>by</span>
+          <span>MODEUS</span>
+        </h1>
+        <p class="hero-description">
+          <span>test</span> Short text about modeus blah blah blah
+        </p>
+      </div>
+      <div class="hero-media">
+        <div class="model-frame">
+          <div class="model"></div>
+        </div>
+        <div class="hero-controls">
+          <button class="outline rotate-btn">Rotate</button>
+          <button class="outline reset-btn">Reset</button>
+        </div>
+      </div>
+      <p class="scroll-label right">Scroll down</p>
+    </section>
+
+    
+
+    <section class="outro">
+      <div class="outro-copy">
+        <h2>
+          Modeus designs and produces complete chair concepts, from first sketch
+         to labeled, launch-ready product.
+
+        </h2>
+        <p>Phone <span><a href="tel:+31887863536">+31 (0)88 786 3536</a></span></p>
+        <p>Email <span><a href="mailto:studio@modeus.com">support@modeus.com</a></span></p>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <div class="gallery-header">
+        <p class="gallery-eyebrow">Modeus designs</p>
+        <h3>A chair for every project</h3>
+      </div>
+      <div class="gallery-scroll-wrapper">
+        <button class="gallery-nav gallery-nav--prev" aria-label="Previous image">‹</button>
+        <div class="gallery-scroll" id="galleryScroll">
+        <figure class="gallery-portrait-card">
+          <img src="./assets/Jesper Oktober-108.jpg" alt="Lifestyle 1" />
+          <figcaption>
+            <p class="gallery-label">Yanai Lounge</p>
+            <p>Textured boucle · powder coated frame</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-portrait-card">
+          <img src="./assets/DSC_1906.jpg" alt="Lifestyle 2" />
+          <figcaption>
+            <p class="gallery-label">Hofu Dining</p>
+            <p>Oak veneer · upholstered shells</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-portrait-card">
+          <img src="./assets/DSC_2148.jpg" alt="Lifestyle 3" />
+          <figcaption>
+            <p class="gallery-label">Yuni Bar</p>
+            <p>High-stool silhouette</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-portrait-card">
+          <img src="./assets/JH_Makio_5.jpg" alt="Lifestyle 4" />
+          <figcaption>
+            <p class="gallery-label">Hiro Corner</p>
+            <p>Configured for retail lounge</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-portrait-card">
+          <img src="./assets/Jesper Oktober-045.jpg" alt="Lifestyle 4" />
+          <figcaption>
+            <p class="gallery-label">Hiro Corner</p>
+            <p>Configured for retail lounge</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-portrait-card">
+          <img src="./assets/JH_Makio_1.jpg" alt="Lifestyle 4" />
+          <figcaption>
+            <p class="gallery-label">Hiro Corner</p>
+            <p>Configured for retail lounge</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-portrait-card">
+          <img src="./assets/Jesper Oktober-045.jpg" alt="Lifestyle 4" />
+          <figcaption>
+            <p class="gallery-label">Hiro Corner</p>
+            <p>Configured for retail lounge</p>
+          </figcaption>
+        </figure>
+      </div>
+        <button class="gallery-nav gallery-nav--next" aria-label="Next image">›</button>
+        <div class="gallery-scroll-progress">
+          <div class="gallery-scroll-progress-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="configurator" class="configurator">
+      <div class="configurator-copy">
+        <p class="configurator-eyebrow">3D chair configurator</p>
+        <h3>Configure the chair your project needs</h3>
+        <p class="configurator-description">
+          Switch between on stock models for immediate delivery or unlock the full made-to-order palette. Every selection is visualized in real time so you can validate scale, tones, and finishes before you order.
+        </p>
+        <div class="configurator-options">
+          <div>
+            <p class="option-label">Seat Model</p>
+            <p>Yanai · Hofu · Yuni · Hiro</p>
+          </div>
+          <div>
+            <p class="option-label">Seat Color</p>
+            <p>100 + options</p>
+          </div>
+          <div>
+            <p class="option-label">Frame Model</p>
+            <p>Turn · Beehive · Revolve · Slide</p>
+          </div>
+          <div>
+            <p class="option-label">Delivery</p>
+            <p>On stock (1 Week) · Made to order (4–8 weeks)</p>
+          </div>
+        </div>
+        <div class="configurator-cta">
+          <button class="ghost-btn">Launch configurator</button>
+        </div>
+      </div>
+      <div class="configurator-panel">
+        <div class="configurator-panel-inner image-placeholder">
+          <span>Preview image placeholder</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="showroom">
+      <div class="showroom-panel">
+        <div class="showroom-panel-inner">
+          <img src="./assets/JH_Makio_Launo.jpg" alt="Showroom in Netherlands, Haarlem" />
+        </div>
+      </div>
+      <div class="showroom-copy">
+        <p class="showroom-eyebrow">Showroom</p>
+        <h3>A space devoted to our world</h3>
+        <p class="showroom-description">
+          We have a showroom dedicated to our world and products in Netherlands (Haarlem).
+        </p>
+        <button class="ghost-btn">Schedule a visit</button>
+      </div>
+      
+    </section>
+
+    <section class="brochures">
+      <div class="brochures-header">
+        <p class="brochures-eyebrow">Downloads</p>
+        <h3>Brochures & catalogues</h3>
+      </div>
+      <div class="brochures-grid">
+        <article class="brochure-card">
+          <p class="brochure-label">2025 catalogue</p>
+          <p>Full range overview, made-to-order guide</p>
+          <button class="ghost-btn">Download PDF</button>
+        </article>
+        <article class="brochure-card">
+          <p class="brochure-label">Configurator playbook</p>
+          <p>Step-by-step guide plus finish samples</p>
+          <button class="ghost-btn">Download PDF</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-partner">
+      <div class="cta-content">
+        <p class="cta-eyebrow">For companies</p>
+        <h3>Become a Modeus partner</h3>
+        <p class="cta-text">
+          Unlock configurator access, co-branded assets, and stocked hero products ready for your next interior rollout.
+        </p>
+      </div>
+      <a class="cta-button" href="https://example.com/partner-form" target="_blank" rel="noopener noreferrer">
+        Register as partner
+      </a>
+    </section>
+
+    <a class="partner-login" href="#partner">Partner login</a>
+
+    <footer class="site-footer">
+      <div class="footer-talk">
+        <h2 class="footer-talk-heading">
+          Let's t<span class="chair-model-inline"><canvas class="chair-canvas"></canvas></span>lk!
+        </h2>
+        <button class="footer-partner-btn">
+          Become a partner
+          <span class="arrow">→</span>
+        </button>
+      </div>
+      <div class="footer-top">
+        <div>
+          <p class="logo">Modeus</p>
+          <p class="footer-description">
+            High-spec seating systems for retail, hospitality and contract spaces. From configurator to showroom.
+          </p>
+        </div>
+        <div class="footer-pages">
+          <p class="footer-label">Pages</p>
+          <a href="./about.html">About us</a>
+          <a href="#configurator">3D Configurator</a>
+          <a href="#gallery">Brand</a>
+          <a href="#services">Services</a>
+        </div>
+        <div class="footer-social">
+          <p class="footer-label">Social</p>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+        <div class="footer-contact">
+          <p class="footer-label">Contact</p>
+          <a href="mailto:studio@modeus.com">support@modeus.com</a>
+          <a href="tel:+31887863536">+31 (0)88 786 3536</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Modeus — all rights reserved</p>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </footer>
+
+    
+
+
+
+    <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
