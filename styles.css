@@ -920,14 +920,14 @@ figcaption > p {
   margin: 6em auto 0;
   width: calc(100% - 12em);
   border-radius: 20px;
-  background: linear-gradient(135deg, #111111, #323232);
-  color: #ffffff;
+  background: linear-gradient(135deg, #e9e2d2, #f8f3ea);
+  color: black;
   padding: 4em 5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 3em;
-  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 40px 80px rgba(180, 177, 177, 0.1);
 }
 
 .cta-eyebrow {
@@ -945,7 +945,7 @@ figcaption > p {
 }
 
 .cta-text {
-  color: #ffffff;
+  color: black;
   font-size: 15px;
   line-height: 1.8;
   max-width: 520px;
@@ -1068,7 +1068,7 @@ figcaption > p {
   letter-spacing: 0.5em;
   text-transform: uppercase;
   margin-bottom: 0.8em;
-  color: #8c8c8c;
+  color: #e9e2d2;
 }
 
 .footer-description {
@@ -1283,7 +1283,6 @@ figcaption > p {
   }
 
   .site-footer {
-    max-width: 1800px;
     margin-left: auto;
     margin-right: auto;
   }
