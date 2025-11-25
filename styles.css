@@ -707,6 +707,14 @@ figcaption > p {
   gap: 0.8em;
 }
 
+.highlight-card .eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: #8c6f4f;
+  margin-bottom: 0.2em;
+}
+
 .highlight-card h3 {
   font-size: 26px;
   font-weight: 500;
