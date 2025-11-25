@@ -35,7 +35,10 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 renderer.physicallyCorrectLights = true;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 2.5;
-document.querySelector(".model").appendChild(renderer.domElement);
+const modelContainer = document.querySelector(".model");
+if (modelContainer) {
+  modelContainer.appendChild(renderer.domElement);
+}
 
 window.addEventListener("resize", resizeRendererToFrame);
 

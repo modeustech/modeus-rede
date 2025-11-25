@@ -593,9 +593,12 @@ figcaption > p {
 }
 
 .about-hero {
-  padding: 12em 6em 6em;
+  padding: 8em 6em;
   background: #e9e2d2;
   margin-top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .about-hero-content {
@@ -603,7 +606,7 @@ figcaption > p {
 }
 
 .about-hero h1 {
-  font-size: 120px;
+  font-size: 100px;
   font-weight: 500;
   line-height: 1.05;
   margin-bottom: 0.8em;
@@ -616,6 +619,347 @@ figcaption > p {
   max-width: 640px;
 }
 
+.brand-hero {
+  padding: 8em 6em;
+  background: #f7f3ed;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.brand-hero-content {
+  max-width: 760px;
+}
+
+.brand-hero-eyebrow {
+  letter-spacing: 0.35em;
+  color: #8c6f4f;
+}
+
+.brand-hero h1 {
+  font-size: 110px;
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 0.4em 0;
+}
+
+.brand-hero-lede {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #3a3a3a;
+}
+
+.brand-overview {
+  padding: 6em 6em;
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3em;
+}
+
+.brand-overview-text {
+  grid-column: span 7;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.brand-overview-text h2 {
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.brand-overview-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #3a3a3a;
+}
+
+.brand-overview-highlights {
+  grid-column: span 5;
+  display: grid;
+  gap: 1.2em;
+}
+
+.brand-overview-highlights article {
+  border: 1px solid #ede5da;
+  border-radius: 18px;
+  padding: 2em;
+  background: #f9f6f1;
+}
+
+.brand-highlights {
+  padding: 4em 6em;
+  background: #fdfbf8;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2em;
+}
+
+.highlight-card {
+  border: 1px solid #ede5da;
+  border-radius: 18px;
+  padding: 2.5em;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+.highlight-card h3 {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.highlight-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #3a3a3a;
+}
+
+.brand-gallery {
+  padding: 6em 6em;
+  background: #ffffff;
+}
+
+.brand-gallery-header {
+  max-width: 620px;
+  margin-bottom: 3em;
+}
+
+.brand-gallery-header h2 {
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.brand-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5em;
+}
+
+.brand-gallery-grid figure {
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-gallery-grid img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.brand-gallery-grid figcaption {
+  padding: 1.25em;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6d655c;
+  background: #f9f6f1;
+}
+
+.brand-cta {
+  margin: 0 6em;
+  padding: 3.5em 4em;
+  border-radius: 22px;
+  background: #121212;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.brand-cta h3 {
+  font-size: 42px;
+  font-weight: 400;
+}
+
+.brand-cta p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.5em;
+}
+
+.services-hero {
+  padding: 8em 6em;
+  background: #e9e2d2;
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.services-hero-content {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.services-hero h1 {
+  font-size: 108px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.services-hero p {
+  font-size: 18px;
+  line-height: 1.9;
+  color: rgba(0, 0, 0, 0.78);
+}
+
+.services-grid {
+  padding: 6em 6em;
+  background: #f5f1ea;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2em;
+}
+
+.service-card {
+  border-radius: 24px;
+  border: 1px solid #e4dbcd;
+  background: #ffffff;
+  padding: 2.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.service-number {
+  font-size: 12px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: #b9a689;
+}
+
+.service-card h3 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.service-card p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #3a3a3a;
+}
+
+.service-list {
+  margin: 0;
+  padding-left: 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  color: #3a3a3a;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.service-list li {
+  list-style: disc;
+}
+
+.contact-hero {
+  padding: 8em 6em;
+  background: #ebe6dd;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.contact-hero-content {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.contact-hero h1 {
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.contact-hero p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #3a3a3a;
+}
+
+.contact-details {
+  padding: 5em 6em;
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2em;
+}
+
+.contact-card {
+  border: 1px solid #e4dbcd;
+  border-radius: 20px;
+  padding: 2.5em;
+  background: #fffdf9;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.contact-card ul {
+  padding-left: 1.2em;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+  color: #3a3a3a;
+}
+
+.contact-label {
+  font-size: 12px;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #8c6f4f;
+}
+
+.contact-form-area {
+  padding: 5em 6em 6em;
+  background: #f7f3ed;
+}
+
+.contact-form-inner {
+  border: 1px dashed #bca88f;
+  border-radius: 24px;
+  padding: 3em;
+  background: #fffdf9;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  text-align: left;
+}
+
+.contact-form-inner h2 {
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.contact-form-placeholder {
+  border: 1px solid #e4dbcd;
+  border-radius: 18px;
+  min-height: 320px;
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(188, 168, 143, 0.15),
+    rgba(188, 168, 143, 0.15) 20px,
+    transparent 20px,
+    transparent 40px
+  );
+}
 .about-story {
   padding: 8em 6em;
   display: grid;
@@ -696,7 +1040,7 @@ figcaption > p {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5em;
 }
 
@@ -745,6 +1089,66 @@ figcaption > p {
   font-size: 14px;
   line-height: 1.7;
   color: #4a4a4a;
+}
+
+.team-snapshot {
+  padding: 8em 6em;
+  background: #f4efe6;
+}
+
+.team-snapshot-content {
+  display: flex;
+  gap: 3em;
+  align-items: stretch;
+}
+
+.team-snapshot-text {
+  flex: 0 0 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.team-snapshot-text h2 {
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.team-snapshot-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #3a3a3a;
+}
+
+.team-snapshot-images {
+  flex: 1;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 1.5em;
+}
+
+.snapshot-item {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #111;
+}
+
+.snapshot-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex: 1;
+}
+
+.snapshot-item figcaption {
+  padding: 1.25em 1.5em;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ffffff;
+  background: linear-gradient(120deg, rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.65));
 }
 
 .about-gallery {
@@ -1335,6 +1739,14 @@ figcaption > p {
     font-size: 44px;
   }
 
+  .team-snapshot {
+    padding: 6em 4em;
+  }
+
+  .team-snapshot-text h2 {
+    font-size: 42px;
+  }
+
   .about-gallery-header h2 {
     font-size: 40px;
   }
@@ -1344,7 +1756,81 @@ figcaption > p {
   }
 
   .team-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .brand-hero {
+    padding: 7em 4em;
+  }
+
+  .brand-hero h1 {
+    font-size: 88px;
+  }
+
+  .brand-overview {
+    padding: 5em 4em;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .brand-overview-text {
+    grid-column: span 5;
+  }
+
+  .brand-overview-highlights {
+    grid-column: span 3;
+  }
+
+  .brand-hero-lede,
+  .brand-overview-text p {
+    font-size: 16px;
+  }
+
+  .brand-highlights {
+    padding: 3.5em 4em;
+  }
+
+  .brand-gallery {
+    padding: 5em 4em;
+  }
+
+  .brand-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .brand-cta {
+    margin: 0 4em;
+  }
+
+  .services-hero {
+    padding: 7em 4em;
+  }
+
+  .services-hero h1 {
+    font-size: 86px;
+  }
+
+  .services-grid {
+    padding: 5em 4em;
+  }
+
+  .contact-hero {
+    padding: 7em 4em;
+  }
+
+  .contact-hero h1 {
+    font-size: 78px;
+  }
+
+  .contact-details {
+    padding: 4.5em 4em;
+  }
+
+  .contact-form-area {
+    padding: 4.5em 4em 5em;
+  }
+
+  .contact-form-inner h2 {
+    font-size: 42px;
   }
 }
 
@@ -1423,6 +1909,7 @@ figcaption > p {
 
   .about-hero {
     padding: 9em 3em 3em;
+    max-height: 100vh;
   }
 
   .about-hero h1 {
@@ -1493,6 +1980,96 @@ figcaption > p {
 
   .team-card-body {
     padding: 1.5em;
+  }
+
+  .brand-hero {
+    padding: 6em 3em;
+    min-height: auto;
+  }
+
+  .brand-hero h1 {
+    font-size: 72px;
+  }
+
+  .brand-overview {
+    padding: 4.5em 3em;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .brand-overview-text,
+  .brand-overview-highlights {
+    grid-column: span 6;
+  }
+
+  .brand-overview-highlights {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .brand-highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 3em 3em;
+  }
+
+  .brand-gallery {
+    padding: 4.5em 3em;
+  }
+
+  .brand-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .brand-cta {
+    margin: 0 3em;
+    padding: 3em;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .services-hero {
+    padding: 6em 3em;
+  }
+
+  .services-hero h1 {
+    font-size: 70px;
+  }
+
+  .services-grid {
+    padding: 4.5em 3em;
+    grid-template-columns: 1fr;
+  }
+
+  .contact-hero {
+    padding: 6em 3em;
+  }
+
+  .contact-hero h1 {
+    font-size: 62px;
+  }
+
+  .contact-details {
+    grid-template-columns: 1fr;
+    padding: 4em 3em;
+  }
+
+  .contact-form-area {
+    padding: 4em 3em 4.5em;
+  }
+
+  .team-snapshot {
+    padding: 5em 3em;
+  }
+
+  .team-snapshot-content {
+    flex-direction: column;
+  }
+
+  .team-snapshot-images {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .snapshot-item img {
+    min-height: 320px;
   }
 
   .about-gallery {
@@ -1674,6 +2251,107 @@ figcaption > p {
     font-size: 16px;
   }
 
+  .brand-hero {
+    padding: 5.5em 2em;
+  }
+
+  .brand-hero h1 {
+    font-size: 58px;
+  }
+
+  .brand-hero-lede {
+    font-size: 15px;
+  }
+
+  .brand-overview {
+    padding: 4em 2em;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5em;
+  }
+
+  .brand-overview-text,
+  .brand-overview-highlights {
+    grid-column: span 4;
+  }
+
+  .brand-overview-highlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brand-highlights {
+    padding: 2.5em 2em;
+    grid-template-columns: 1fr;
+  }
+
+  .brand-gallery {
+    padding: 4em 2em;
+  }
+
+  .brand-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-gallery-grid img {
+    height: 260px;
+  }
+
+  .brand-cta {
+    margin: 0 2em;
+  }
+
+  .services-hero {
+    padding: 5em 2em;
+  }
+
+  .services-hero h1 {
+    font-size: 50px;
+  }
+
+  .services-grid {
+    padding: 4em 2em;
+  }
+
+  .contact-hero {
+    padding: 5em 2em;
+  }
+
+  .contact-hero h1 {
+    font-size: 48px;
+  }
+
+  .contact-details {
+    padding: 3.5em 2em;
+  }
+
+  .contact-card {
+    padding: 2em;
+  }
+
+  .contact-form-area {
+    padding: 3.5em 2em 4em;
+  }
+
+  .contact-form-inner h2 {
+    font-size: 36px;
+  }
+
+  .services-hero {
+    padding: 5.5em 2em;
+  }
+
+  .services-hero h1 {
+    font-size: 54px;
+  }
+
+  .services-grid {
+    padding: 4em 2em;
+    gap: 1.5em;
+  }
+
+  .service-card {
+    padding: 2em;
+  }
+
   .about-story {
     padding: 5em 2em;
     gap: 2.5em;
@@ -1697,6 +2375,22 @@ figcaption > p {
 
   .team-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-snapshot {
+    padding: 4.5em 2em;
+  }
+
+  .team-snapshot-text h2 {
+    font-size: 34px;
+  }
+
+  .team-snapshot-text p {
+    font-size: 15px;
+  }
+
+  .snapshot-item img {
+    min-height: 260px;
   }
 
   .about-gallery-header h2 {
