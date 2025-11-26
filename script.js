@@ -490,6 +490,60 @@ if (hamburger && navLinks) {
         closeMenu();
       }
     }
+
+// Careers modal
+const careerCards = document.querySelectorAll(".career-card");
+const careerModal = document.querySelector("#career-modal");
+
+if (careerCards.length && careerModal) {
+  const modalTitle = careerModal.querySelector(".career-modal-title");
+  const modalMeta = careerModal.querySelector(".career-modal-meta");
+  const modalBody = careerModal.querySelector(".career-modal-body");
+  const modalApply = careerModal.querySelector(".career-modal-apply");
+  const closeTriggers = careerModal.querySelectorAll("[data-career-close]");
+
+  function openCareerModal(card) {
+    const title = card.querySelector("h2")?.textContent ?? "";
+    const meta = card.querySelector(".career-meta")?.textContent ?? "";
+    const fullBody = card.querySelector(".career-full");
+    const applyLink = card.querySelector("[data-career-apply]");
+
+    if (modalTitle) modalTitle.textContent = title;
+    if (modalMeta) modalMeta.textContent = meta;
+    if (modalBody && fullBody) {
+      modalBody.innerHTML = fullBody.innerHTML;
+    }
+    if (modalApply && applyLink) {
+      modalApply.href = applyLink.href;
+      modalApply.textContent = applyLink.textContent || "Apply via email";
+    }
+
+    careerModal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeCareerModal() {
+    careerModal.classList.remove("is-open");
+    document.body.style.overflow = "";
+  }
+
+  careerCards.forEach((card) => {
+    const readMoreBtn = card.querySelector(".career-readmore");
+    if (readMoreBtn) {
+      readMoreBtn.addEventListener("click", () => openCareerModal(card));
+    }
+  });
+
+  closeTriggers.forEach((el) => {
+    el.addEventListener("click", closeCareerModal);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && careerModal.classList.contains("is-open")) {
+      closeCareerModal();
+    }
+  });
+}
   });
 
   // Close menu on window resize if it's open and we're above mobile breakpoint

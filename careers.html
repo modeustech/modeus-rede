@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers | Modeus Furniture</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="primary-nav">
+      <a href="./index.html">
+        <img src="./assets/Modeus secondary II.png" alt="Modeus logo" class="logo" />
+      </a>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links">
+        <a href="./about.html">About us</a>
+        <a href="./index.html#configurator">3D Configurator</a>
+        <a href="./brand.html">Brand</a>
+        <a href="./services.html">Services</a>
+      </div>
+      <a class="nav-cta" href="./get-in-touch.html">Get in touch</a>
+    </nav>
+
+    <main class="careers">
+      <section class="careers-hero">
+        <div class="careers-hero-inner">
+          <div class="careers-header">
+            <p class="eyebrow">Careers</p>
+            <h1>Join the team behind Modeus.</h1>
+            <p>
+              We’re always looking for people who care about materials, details, and building great experiences for our
+              partners across Europe.
+            </p>
+          </div>
+          <div class="careers-hero-media">
+            <img src="./assets/careers_image1%20Large.jpeg" alt="Team working in the Modeus studio" />
+          </div>
+        </div>
+      </section>
+
+      <section class="careers-list">
+        <article class="career-card" data-career-id="account-manager">
+          <p class="eyebrow">Open</p>
+          <h2>Account Manager Retail (Benelux)</h2>
+          <p class="career-meta">Haarlem · Full-time · Hybrid</p>
+          <p>
+            Help retail and online partners grow our chair programs across the Benelux. You’ll manage a portfolio of
+            resellers, plan launches, and keep assortments sharp.
+          </p>
+          <button class="career-readmore" type="button">Read more</button>
+          <div class="career-full" hidden>
+            <p>
+              In this role you build long-term relationships with physical stores and online platforms across the Benelux.
+              You’ll visit key accounts, analyse what sells on the floor and online, and shape the right Jesper Home and
+              Modeus mix per partner.
+            </p>
+            <p>
+              Together with our internal team you plan introductions, train store staff, and make sure our stocked and
+              seasonal chairs are easy to sell. You are comfortable with numbers, simple reporting, and you enjoy spending
+              time on the road.
+            </p>
+            <p>
+              We’re looking for someone who speaks Dutch and English, understands retail or e-commerce, and likes a mix of
+              commercial and practical work.
+            </p>
+          </div>
+          <a
+            class="career-link"
+            href="mailto:support@modeus.com?subject=Application%20Account%20Manager%20Retail"
+            data-career-apply
+          >
+            Apply via email
+          </a>
+        </article>
+
+        <article class="career-card" data-career-id="product-developer">
+          <p class="eyebrow">Open</p>
+          <h2>Product Developer — Chairs</h2>
+          <p class="career-meta">Haarlem · Full-time</p>
+          <p>
+            Work with our suppliers and design team to translate ideas into durable, comfortable chairs ready for
+            production and certification.
+          </p>
+          <button class="career-readmore" type="button">Read more</button>
+          <div class="career-full" hidden>
+            <p>
+              You translate sketches and moodboards into production-ready chair designs. You work closely with factories,
+              test samples, and guard comfort, stability, and finish quality.
+            </p>
+            <p>
+              Your day-to-day includes setting up simple specs, following up on samples, and coordinating small changes for
+              stocked and seasonal models. You’re comfortable working with technical drawings from partners and giving clear
+              feedback.
+            </p>
+            <p>
+              Experience with furniture or product development is a big plus. You enjoy details, timelines, and working with
+              international suppliers.
+            </p>
+          </div>
+          <a class="career-link" href="mailto:support@modeus.com?subject=Application%20Product%20Developer" data-career-apply>
+            Apply via email
+          </a>
+        </article>
+
+        <article class="career-card" data-career-id="content-merchandiser">
+          <p class="eyebrow">Open</p>
+          <h2>Content & Visual Merchandiser</h2>
+          <p class="career-meta">Remote · Part-time / Freelance</p>
+          <p>
+            Create product copy, simple landing pages, and visual guidelines that help our resellers tell a clear Jesper
+            Home and Modeus story.
+          </p>
+          <button class="career-readmore" type="button">Read more</button>
+          <div class="career-full" hidden>
+            <p>
+              You turn product details into clear, friendly copy for product pages, lookbooks, and basic launch emails. You
+              help translate our chair stories into simple guidelines resellers can follow.
+            </p>
+            <p>
+              You’ll work with photography, specs, and input from the commercial team to create text and simple content
+              blocks. You understand what store teams and online shoppers need to see to make a decision.
+            </p>
+            <p>
+              Strong written English is required; Dutch or German is a plus. Experience with e-commerce, retail, or
+              interior/furniture brands is helpful.
+            </p>
+          </div>
+          <a
+            class="career-link"
+            href="mailto:support@modeus.com?subject=Application%20Content%20%26%20Visual%20Merchandiser"
+            data-career-apply
+          >
+            Apply via email
+          </a>
+        </article>
+      </section>
+    </main>
+
+    <div class="career-modal" id="career-modal" aria-hidden="true">
+      <div class="career-modal-backdrop" data-career-close></div>
+      <div class="career-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="career-modal-title">
+        <button class="career-modal-close" type="button" aria-label="Close" data-career-close>×</button>
+        <p class="career-tag career-modal-tag">Open</p>
+        <h2 class="career-modal-title" id="career-modal-title"></h2>
+        <p class="career-modal-meta"></p>
+        <div class="career-modal-body"></div>
+        <a href="#" class="career-modal-apply" target="_blank" rel="noopener noreferrer">Apply via email</a>
+      </div>
+    </div>
+
+    <a class="partner-login" href="#partner">Become a partner</a>
+
+    <footer class="site-footer">
+      <div class="footer-talk">
+        <h2 class="footer-talk-heading">
+          Let's talk ch<span class="chair-model-inline"><canvas class="chair-canvas"></canvas></span>irs!
+        </h2>
+        <button class="footer-partner-btn">
+          Become a partner
+          <span class="arrow">→</span>
+        </button>
+      </div>
+      <div class="footer-top">
+        <div>
+          <p class="logo">Modeus</p>
+          <p class="footer-description">
+            Designed in the Netherlands. From configurator to showroom.
+          </p>
+        </div>
+        <div class="footer-pages">
+          <p class="footer-label">Pages</p>
+          <a href="./about.html">About us</a>
+          <a href="./index.html#configurator">3D Configurator</a>
+          <a href="./brand.html">Brand</a>
+          <a href="./services.html">Services</a>
+          <a href="./get-in-touch.html">Get in touch</a>
+          <a href="./privacy.html">Privacy</a>
+          <a href="./careers.html">Careers</a>
+        </div>
+        <div class="footer-social">
+          <p class="footer-label">Social</p>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+        <div class="footer-contact">
+          <p class="footer-label">Contact</p>
+          <a href="mailto:studio@modeus.com">support@modeus.com</a>
+          <a href="tel:+31887863536">+31 (0)88 786 3536</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© Modeus — all rights reserved</p>
+        <div class="footer-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+
