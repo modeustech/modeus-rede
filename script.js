@@ -252,6 +252,80 @@ ScrollTrigger.create({
   toggleActions: "play reverse play reverse",
 });
 
+// About story highlights line reveal
+if (document.querySelector(".about-story-highlights .stat")) {
+  const aboutStatsSplit = new SplitType(".about-story-highlights .stat", {
+    types: "lines",
+    lineClass: "line",
+  });
+
+  aboutStatsSplit.lines.forEach((line) => {
+    const text = line.innerHTML;
+    line.innerHTML = `<span style="display: block; transform: translateY(70px);">${text}</span>`;
+  });
+
+  ScrollTrigger.create({
+    trigger: ".about-story-highlights",
+    start: "top 80%",
+    onEnter: () => {
+      gsap.to(".about-story-highlights .line span", {
+        translateY: 0,
+        duration: 0.9,
+        stagger: 0.08,
+        ease: "power3.out",
+        force3D: true,
+      });
+    },
+    onLeaveBack: () => {
+      gsap.to(".about-story-highlights .line span", {
+        translateY: 70,
+        duration: 0.9,
+        stagger: 0.08,
+        ease: "power3.out",
+        force3D: true,
+      });
+    },
+    toggleActions: "play reverse play reverse",
+  });
+}
+
+// Services headings line reveal
+if (document.querySelector(".services-grid h3")) {
+  const servicesSplit = new SplitType(".services-grid h3", {
+    types: "lines",
+    lineClass: "line",
+  });
+
+  servicesSplit.lines.forEach((line) => {
+    const text = line.innerHTML;
+    line.innerHTML = `<span style="display: block; transform: translateY(70px);">${text}</span>`;
+  });
+
+  ScrollTrigger.create({
+    trigger: ".services-grid",
+    start: "top 80%",
+    onEnter: () => {
+      gsap.to(".services-grid h3 .line span", {
+        translateY: 0,
+        duration: 0.9,
+        stagger: 0.08,
+        ease: "power3.out",
+        force3D: true,
+      });
+    },
+    onLeaveBack: () => {
+      gsap.to(".services-grid h3 .line span", {
+        translateY: 70,
+        duration: 0.9,
+        stagger: 0.08,
+        ease: "power3.out",
+        force3D: true,
+      });
+    },
+    toggleActions: "play reverse play reverse",
+  });
+}
+
 // Gallery scroll navigation and progress indicator
 const galleryScroll = document.getElementById("galleryScroll");
 const galleryPrev = document.querySelector(".gallery-nav--prev");
