@@ -550,7 +550,7 @@ figcaption > p {
   justify-content: center;
 }
 
-.brand-hero-inner {
+.brand-hero-inner, .careers-hero-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -570,7 +570,7 @@ figcaption > p {
   max-width: 50%;
 }
 
-.brand-hero-media img {
+.brand-hero-media img, .careers-hero-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -782,25 +782,9 @@ figcaption > p {
   margin-bottom: 4em;
 }
 
-.careers-hero-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 3em;
-}
 
-.careers-hero-media {
-  flex: 0 0 40%;
-  max-width: 50%;
-}
 
-.careers-hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 32px;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-}
+
 
 .careers-list {
   display: grid;
@@ -1798,7 +1782,7 @@ figcaption > p {
     padding: 3.5em 3.5em;
   }
 
-  .brand-hero-inner {
+  .brand-hero-inner, .careers-hero-inner {
     flex-direction: column;
   }
 
@@ -2313,7 +2297,7 @@ figcaption > p {
     font-size: 36px;
   }
 
-  .services-hero, .brand-hero, .about-hero {
+  .services-hero, .brand-hero, .about-hero .careers-hero {
     padding: 5.5em 2em;
   }
 
