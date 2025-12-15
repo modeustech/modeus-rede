@@ -519,3 +519,116 @@ if (galleryScroll && galleryPrev && galleryNext && progressBar) {
 }
 
 
+
+
+
+
+
+
+// Footer unmask scroll effect
+const footer = document.querySelector(".site-footer");
+if (footer) {
+ ScrollTrigger.create({
+   trigger: footer,
+   start: "top bottom",
+   end: "top 20%",
+   scrub: 1,
+   onUpdate: (self) => {
+     const progress = Math.min(self.progress, 1);
+     // Reveal from bottom: start at 100% (fully hidden) and reveal to 0% (fully visible)
+     // The top edge of the clip moves from bottom (100%) to top (0%) as we scroll
+     const topEdge = Math.max(0, 100 - (progress * 100));
+     const clipPath = `polygon(0 ${topEdge}%, 100% ${topEdge}%, 100% 100%, 0 100%)`;
+     footer.style.clipPath = clipPath;
+   },
+ });
+}
+
+
+// Footer inline 3D chair model
+const chairCanvas = document.querySelector(".chair-canvas");
+if (chairCanvas) {
+ const chairScene = new THREE.Scene();
+ const chairCamera = new THREE.PerspectiveCamera(50, 1, 0.01, 1000);
+  const chairRenderer = new THREE.WebGLRenderer({
+   canvas: chairCanvas,
+   antialias: true,
+   alpha: true,
+ });
+ chairRenderer.setClearColor(0x000000, 0);
+  // Update canvas size based on container
+ function resizeChairCanvas() {
+   const container = chairCanvas.parentElement;
+   if (!container) return;
+   const computedStyle = window.getComputedStyle(container);
+   const fontSize = parseFloat(computedStyle.fontSize) || 180; // Default to heading size
+   const size = Math.round(fontSize * 1.2); // Scale with font size
+   chairCanvas.width = size;
+   chairCanvas.height = size;
+   chairRenderer.setSize(size, size);
+   chairRenderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Cap pixel ratio for performance
+   chairCamera.aspect = 1;
+   chairCamera.updateProjectionMatrix();
+ }
+  resizeChairCanvas();
+ window.addEventListener("resize", resizeChairCanvas);
+  // Lights
+ const chairAmbientLight = new THREE.AmbientLight(0xffffff, 1);
+ chairScene.add(chairAmbientLight);
+  const chairDirectionalLight = new THREE.DirectionalLight(0xffffff, 2);
+ chairDirectionalLight.position.set(2, 5, 3);
+ chairScene.add(chairDirectionalLight);
+  const chairFillLight = new THREE.DirectionalLight(0xffffff, 0.5);
+ chairFillLight.position.set(-2, 0, -2);
+ chairScene.add(chairFillLight);
+  let chairModel = null;
+ const chairLoader = new THREE.GLTFLoader();
+  chairLoader.load("./assets/bar.glb", function (gltf) {
+   chairModel = gltf.scene;
+   chairModel.traverse((node) => {
+     if (node.isMesh) {
+       const material = new THREE.MeshStandardMaterial({
+         color: 0xffffff,
+         metalness: 0.3,
+         roughness: 0.7,
+       });
+       node.material = material;
+     }
+   });
+  
+   const box = new THREE.Box3().setFromObject(chairModel);
+   const center = box.getCenter(new THREE.Vector3());
+   chairModel.position.sub(center);
+  
+   const size = box.getSize(new THREE.Vector3());
+   const maxDim = Math.max(size.x, size.y, size.z);
+  
+   // Adjust scale to fit bar model - may need different scaling
+   const scale = 125 / maxDim;
+   chairModel.scale.set(scale, scale, scale);
+  
+   chairScene.add(chairModel);
+  
+   // Position camera - adjust distance based on model size
+   const distance = maxDim * 2.5;
+   chairCamera.position.set(0, 0, distance);
+   chairCamera.lookAt(0, 0, 0);
+   chairCamera.updateProjectionMatrix();
+  
+   // Re-render after model loads
+   chairRenderer.render(chairScene, chairCamera);
+ });
+  // Auto-rotation animation
+ function animateChair() {
+   requestAnimationFrame(animateChair);
+  
+   if (chairModel) {
+     chairModel.rotation.y += 0.01;
+   }
+  
+   chairRenderer.render(chairScene, chairCamera);
+ }
+  animateChair();
+}
+
+
