@@ -23,10 +23,10 @@ a {
 
 html,
 body {
-  width: 100vw;
+  width: 100%;
   background-color: #ffffff;
   color: #000000;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 h1 {
