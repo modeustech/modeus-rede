@@ -519,12 +519,6 @@ if (galleryScroll && galleryPrev && galleryNext && progressBar) {
 }
 
 
-
-
-
-
-
-
 // Footer unmask scroll effect
 const footer = document.querySelector(".site-footer");
 if (footer) {
@@ -630,5 +624,3 @@ if (chairCanvas) {
  }
   animateChair();
 }
-
-
