@@ -1,13 +1,15 @@
 /* Disable blue highlight on button click */
 button {
   -webkit-appearance: none; /* helps avoid iOS default button styling */
-  appearance: none; /
+  appearance: none;
+  color: #000000; 
 }
 
 /* You can do the same for links */
 a {
   -webkit-appearance: none; /* helps avoid iOS default button styling */
-  appearance: none; /
+  appearance: none; 
+  color: #000000; 
 }
 
 
