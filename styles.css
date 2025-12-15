@@ -46,9 +46,7 @@ p {
   font-weight: 400;
   line-height: 0.9;
 }
-a:visited {
-  color: #000000 !important;
-}
+
 
 a:hover,
 a:focus {
