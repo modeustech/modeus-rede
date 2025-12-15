@@ -301,3 +301,23 @@
     gap: 1em;
     align-items: flex-start;
   } }
+
+
+@media (max-width: 1024px) {
+    .site-footer {
+      height: auto;        /* instead of 100vh */
+      min-height: 60vh;    /* optional: keep it nicely tall */
+      clip-path: none;     /* avoid clipping the bottom */
+      padding-bottom: 3em; /* a bit of safe space at the bottom */
+    }
+  }
+  
+  /* Phones: tighter padding, fully flexible height */
+  @media (max-width: 640px) {
+    .site-footer {
+      height: auto;
+      min-height: 0;
+      padding: 4em 1.5em 2.5em;
+      clip-path: none;
+    }
+  }
