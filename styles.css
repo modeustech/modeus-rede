@@ -178,6 +178,8 @@ section + section {
   letter-spacing: 0.15em;
   cursor: pointer;
   color: #000000;
+  -webkit-appearance: none; /* helps avoid iOS default button styling */
+  appearance: none; /* helps avoid iOS default button styling */
 }
 
 .hero-controls .outline:hover {
