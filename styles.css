@@ -1,13 +1,13 @@
 /* Disable blue highlight on button click */
 button {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: none; /* helps avoid iOS default button styling */
+  appearance: none; /
 }
 
 /* You can do the same for links */
 a {
--webkit-tap-highlight-color: transparent;
--webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: none; /* helps avoid iOS default button styling */
+  appearance: none; /
 }
 
 
