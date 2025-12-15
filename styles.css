@@ -1540,6 +1540,60 @@ figcaption > p {
   text-transform: uppercase;
 }
 
+.partners {
+  padding: 6em 6em 0;
+  background: #ffffff;
+}
+
+.partners-header {
+  max-width: 620px;
+  margin: 0 auto 2.5em;
+  text-align: center;
+}
+
+.partners-header h3 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 400;
+}
+
+.partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5em 3em;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-logo {
+  min-width: 120px;
+  padding: 0.75em 1.5em;
+  border-radius: 999px;
+  border: 1px solid #e0ded8;
+  background: #fbf9f4;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8c8c8c;
+  text-align: center;
+}
+
+.brand-orderchamp-cta {
+  margin: 6em auto 0;
+  width: calc(100% - 12em);
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #ede5da;
+  padding: 3.5em 4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3em;
+}
+
+.brand-orderchamp-cta .cta-text {
+  max-width: 520px;
+}
+
 .cta-partner {
   margin: 6em auto 0;
   width: calc(100% - 12em);
@@ -1613,6 +1667,7 @@ figcaption > p {
   color: #ffffff;
   font-family: montserrat, sans-serif;
   letter-spacing: -0.02em;
+  margin-bottom: 5rem;
 }
 
 .chair-model-inline {
@@ -1675,6 +1730,7 @@ figcaption > p {
   font-size: 14px;
   line-height: 1.6;
   max-width: 320px;
+  color: #ffffff;
 }
 
 .footer-label {
@@ -1708,6 +1764,7 @@ figcaption > p {
   color: #ffffff;
   text-decoration: none;
   transition: opacity 0.3s ease;
+  line-height: 1.6;
 }
 
 .footer-contact a:hover,
@@ -2005,6 +2062,11 @@ figcaption > p {
 
   .brand-cta {
     margin: 0 4em;
+  }
+
+  .brand-orderchamp-cta {
+    width: calc(100% - 8em);
+    padding: 3.5em 3.5em;
   }
 
   .brand-hero-inner {
@@ -2349,8 +2411,20 @@ figcaption > p {
     padding: 6em 3em;
   }
 
+  .partners {
+    padding: 5em 3em 0;
+  }
+
   .brochures-grid {
     grid-template-columns: 1fr;
+  }
+
+  .partners {
+    padding: 5em 3em 0;
+  }
+
+  .partners-logos {
+    gap: 1.5em 2em;
   }
 
   .site-footer {
@@ -2370,6 +2444,13 @@ figcaption > p {
     flex-direction: column;
     align-items: flex-start;
     padding: 4em 3em;
+  }
+
+  .brand-orderchamp-cta {
+    width: calc(100% - 6em);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3.5em 3em;
   }
 }
 
@@ -2479,6 +2560,15 @@ figcaption > p {
 
   .brand-cta {
     margin: 0 2em;
+  }
+
+  .partners {
+    padding: 4em 2em 0;
+  }
+
+  .brand-orderchamp-cta {
+    width: calc(100% - 3em);
+    padding: 3em 1.5em;
   }
 
   .services-hero {
@@ -3166,6 +3256,19 @@ figcaption > p {
   }
 
   .cta-partner {
+    width: calc(100% - 2.4em);
+    padding: 2.5em 1.2em;
+  }
+
+  .brochures {
+    padding: 3.5em 1.2em;
+  }
+
+  .partners {
+    padding: 3.5em 1.2em 0;
+  }
+
+  .brand-orderchamp-cta {
     width: calc(100% - 2.4em);
     padding: 2.5em 1.2em;
   }
