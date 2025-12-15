@@ -477,6 +477,9 @@ figcaption > p {
 }
 
 .ghost-btn {
+  -webkit-appearance: none; /* helps avoid iOS default button styling */
+  appearance: none;
+  color: #000000;
   border: 1px solid #000000;
   background-color: transparent;
   padding: 0.5em 1.5em;
@@ -1568,6 +1571,8 @@ figcaption > p {
 }
 
 .cta-button {
+  -webkit-appearance: none; /* helps avoid iOS default button styling */
+  appearance: none;
   color: #ffffff;
   background-color: #0f8c5c;
   border: 1px solid #0f8c5c;
@@ -2825,6 +2830,8 @@ figcaption > p {
     width: 100%;
     text-align: center;
     padding: 1em 2em;
+    -webkit-appearance: none; /* helps avoid iOS default button styling */
+    appearance: none;
   }
 
   .gallery {
