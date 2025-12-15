@@ -31,7 +31,7 @@ p {
   line-height: 0.9;
 }
 a:visited {
-  color: #000000;
+  color: #000000 !important;
 }
 
 a:hover,
