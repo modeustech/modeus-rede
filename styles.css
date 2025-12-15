@@ -548,6 +548,8 @@ figcaption > p {
   letter-spacing: 0.15em;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
+  max-width: 250px;
+  margin: 0 auto;
 }
 
 .ghost-btn:hover {
@@ -1532,6 +1534,8 @@ figcaption > p {
   flex-direction: column;
   gap: 1em;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  align-items: center;
+  justify-content: center;
 }
 
 .brochure-label {
