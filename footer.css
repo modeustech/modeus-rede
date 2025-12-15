@@ -321,3 +321,8 @@
       clip-path: none;
     }
   }
+
+  .chair-word {
+    white-space: nowrap;
+
+  }
