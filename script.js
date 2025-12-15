@@ -461,3 +461,61 @@ if (careerCards.length && careerModal) {
 }
 
 
+
+
+
+// Gallery scroll navigation and progress indicator
+const galleryScroll = document.getElementById("galleryScroll");
+const galleryPrev = document.querySelector(".gallery-nav--prev");
+const galleryNext = document.querySelector(".gallery-nav--next");
+const progressBar = document.querySelector(".gallery-scroll-progress-bar");
+
+
+if (galleryScroll && galleryPrev && galleryNext && progressBar) {
+ function updateGalleryUI() {
+   const { scrollLeft, scrollWidth, clientWidth } = galleryScroll;
+   const scrollPercentage = (scrollLeft / (scrollWidth - clientWidth)) * 100;
+  
+   // Update progress bar
+   progressBar.style.width = `${scrollPercentage}%`;
+  
+   // Update button states
+   galleryPrev.disabled = scrollLeft <= 0;
+   galleryNext.disabled = scrollLeft >= scrollWidth - clientWidth - 1;
+ }
+
+
+ // Initial state
+ updateGalleryUI();
+
+
+ // Update on scroll
+ galleryScroll.addEventListener("scroll", updateGalleryUI);
+
+
+ // Navigation buttons
+ galleryPrev.addEventListener("click", () => {
+   const cardWidth = galleryScroll.querySelector(".gallery-portrait-card").offsetWidth;
+   const gap = 24; // 1.5em = 24px
+   galleryScroll.scrollBy({
+     left: -(cardWidth + gap),
+     behavior: "smooth",
+   });
+ });
+
+
+ galleryNext.addEventListener("click", () => {
+   const cardWidth = galleryScroll.querySelector(".gallery-portrait-card").offsetWidth;
+   const gap = 24; // 1.5em = 24px
+   galleryScroll.scrollBy({
+     left: cardWidth + gap,
+     behavior: "smooth",
+   });
+ });
+
+
+ // Update on window resize
+ window.addEventListener("resize", updateGalleryUI);
+}
+
+
