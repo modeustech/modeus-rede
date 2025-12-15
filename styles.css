@@ -3189,3 +3189,16 @@ figcaption > p {
 }
 
 
+/* Disable blue highlight on button click */
+button {
+  -webkit-appearance: none; /* helps avoid iOS default button styling */
+  appearance: none;
+  
+}
+
+/* You can do the same for links */
+a {
+  -webkit-appearance: none; /* helps avoid iOS default button styling */
+  appearance: none; 
+
+}

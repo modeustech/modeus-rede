@@ -1,4 +1,9 @@
-const lenis = new Lenis();
+// Option A: keep smooth wheel, disable smoothing on touch
+const lenis = new Lenis({
+  smoothWheel: true,
+  smoothTouch: false,  // let mobile use native scrolling
+  touchMultiplier: 1,  // lower = less “rubber band” feel
+});
 lenis.on("scroll", ScrollTrigger.update);
 gsap.ticker.add((time) => {
   lenis.raf(time * 1000);
