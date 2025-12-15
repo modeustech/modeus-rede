@@ -1,3 +1,317 @@
+// Lenis (desktop only)
+const isTouch = window.matchMedia("(pointer: coarse)").matches;
+
+
+let lenis = null;
+
+
+if (!isTouch) {
+ lenis = new Lenis({
+   smoothWheel: true,
+   smoothTouch: false,
+ });
+
+
+ // Keep ScrollTrigger in sync with Lenis
+ lenis.on("scroll", () => ScrollTrigger.update());
+
+
+ // Drive Lenis with GSAP's ticker
+ gsap.ticker.add((time) => {
+   lenis.raf(time * 1000);
+ });
+ gsap.ticker.lagSmoothing(0);
+}
+
+
+
+
+const scene = new THREE.Scene();
+
+
+const modelFrame = document.querySelector(".model-frame");
+const rotateBtn = document.querySelector(".rotate-btn");
+const resetBtn = document.querySelector(".reset-btn");
+
+
+const camera = new THREE.PerspectiveCamera(55, 1, 0.01, 1000);
+
+
+const renderer = new THREE.WebGLRenderer({
+ antialias: true,
+ alpha: true,
+});
+renderer.setClearColor(0x000000, 0);
+
+
+function resizeRendererToFrame() {
+ if (!modelFrame) return;
+ const { width, height } = modelFrame.getBoundingClientRect();
+ if (width === 0 || height === 0) return;
+ renderer.setSize(width, height);
+ renderer.setPixelRatio(window.devicePixelRatio);
+ camera.aspect = width / height;
+ camera.updateProjectionMatrix();
+}
+
+
+resizeRendererToFrame();
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.physicallyCorrectLights = true;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 2.5;
+const modelContainer = document.querySelector(".model");
+if (modelContainer) {
+ modelContainer.appendChild(renderer.domElement);
+}
+
+
+window.addEventListener("resize", resizeRendererToFrame);
+
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
+scene.add(ambientLight);
+
+
+const mainLight = new THREE.DirectionalLight(0xffffff, 7.5);
+mainLight.position.set(0.5, 7.5, 2.5);
+scene.add(mainLight);
+
+
+const fillLight = new THREE.DirectionalLight(0xffffff, 2.5);
+fillLight.position.set(-15, 0, -5);
+scene.add(fillLight);
+
+
+const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 1.5);
+hemiLight.position.set(0, 0, 0);
+scene.add(hemiLight);
+
+
+function basicAnimate() {
+ renderer.render(scene, camera);
+ requestAnimationFrame(basicAnimate);
+}
+basicAnimate();
+
+
+let model;
+let baseYPosition = 0; // Store the base y position
+let rotationEnabled = true;
+let isDraggingModel = false;
+let dragStartX = 0;
+let dragStartRotationY = 0;
+
+
+const loader = new THREE.GLTFLoader();
+loader.load("./assets/chair_1.glb", function (gltf) {
+ model = gltf.scene;
+ model.traverse((node) => {
+   if (node.isMesh) {
+     // Create a new material that matches the design
+     const material = new THREE.MeshStandardMaterial({
+       color: 0x8c4531, // Dark gray/black to match the design
+       metalness: 0.8,
+       roughness: 1.7,
+       envMapIntensity: 1.0
+     });
+    
+     // Apply the material to the mesh
+     node.material = material;
+     node.castShadow = true;
+     node.receiveShadow = true;
+   }
+ });
+
+
+ const box = new THREE.Box3().setFromObject(model);
+ const center = box.getCenter(new THREE.Vector3());
+ model.position.sub(center);
+ model.position.x = 0;
+ model.position.y -= 7;
+ baseYPosition = model.position.y;
+ scene.add(model);
+
+
+ const size = box.getSize(new THREE.Vector3());
+ const maxDim = Math.max(size.x, size.y, size.z);
+ positionCamera(maxDim);
+
+
+ model.scale.set(0, 0, 0);
+ model.rotation.set(0, 0.5, 0);
+ playInitialAnimation();
+
+
+ cancelAnimationFrame(basicAnimate);
+ animate();
+});
+
+
+const floatAmplitude = 0.2;
+const floatSpeed = 1.5;
+const rotationSpeed = 0.01;
+let isFloating = true;
+const rotationSensitivity = 0.01;
+const baseTilt = 0.4;
+
+
+function updateRotateButtonLabel() {
+ if (!rotateBtn) return;
+ rotateBtn.textContent = rotationEnabled ? "Rotate" : "Pause";
+}
+
+
+function toggleRotation() {
+ rotationEnabled = !rotationEnabled;
+ updateRotateButtonLabel();
+}
+
+
+if (rotateBtn) {
+ rotateBtn.addEventListener("click", toggleRotation);
+}
+
+
+if (resetBtn) {
+ resetBtn.addEventListener("click", () => {
+   if (!model) return;
+   gsap.to(model.rotation, {
+     x: baseTilt,
+     y: 0.5,
+     duration: 0.6,
+     ease: "power2.out",
+   });
+   if (!rotationEnabled) {
+     toggleRotation();
+   }
+ });
+}
+
+
+if (modelFrame) {
+ modelFrame.addEventListener("pointerdown", (event) => {
+   if (!model) return;
+   isDraggingModel = true;
+   dragStartX = event.clientX;
+   dragStartRotationY = model.rotation.y;
+   modelFrame.setPointerCapture(event.pointerId);
+ });
+
+
+ modelFrame.addEventListener("pointermove", (event) => {
+   if (!isDraggingModel || !model) return;
+   const deltaX = event.clientX - dragStartX;
+   model.rotation.y = dragStartRotationY + deltaX * rotationSensitivity;
+ });
+
+
+ modelFrame.addEventListener("pointerup", (event) => {
+   if (!isDraggingModel) return;
+   isDraggingModel = false;
+   if (modelFrame.hasPointerCapture(event.pointerId)) {
+     modelFrame.releasePointerCapture(event.pointerId);
+   }
+ });
+
+
+ modelFrame.addEventListener("pointerleave", () => {
+   isDraggingModel = false;
+ });
+}
+
+
+updateRotateButtonLabel();
+
+
+function positionCamera(maxDim) {
+ const distanceMultiplier = 3.8;     // was 3.2
+ const verticalOffset = maxDim * 0.3; // add some Y height
+
+
+ camera.position.set(0.1, verticalOffset, maxDim * distanceMultiplier);
+ camera.lookAt(0, 0, 0);
+}
+
+
+function playInitialAnimation() {
+ if (model) {
+   gsap.to(model.scale, {
+     x: 2.2,
+     y: 2.2,
+     z: 2.2,
+     duration: 1,
+     ease: "power2.out",
+   });
+ }
+}
+
+
+function animate() {
+ if (model) {
+   if (isFloating) {
+     const floatOffset =
+       Math.sin(Date.now() * 0.001 * floatSpeed) * floatAmplitude;
+     model.position.y = baseYPosition + floatOffset; // Add float to base position
+   }
+
+
+   model.rotation.x = baseTilt;
+   if (rotationEnabled && !isDraggingModel) {
+     model.rotation.y += rotationSpeed;
+   }
+ }
+
+
+ renderer.render(scene, camera);
+ requestAnimationFrame(animate);
+}
+
+
+const introSection = document.querySelector(".intro");
+const archiveSection = document.querySelector(".archive");
+const outroSection = document.querySelector(".outro");
+
+
+const splitText = new SplitType(".outro-copy h2", {
+ types: "lines",
+ lineClass: "line",
+});
+
+
+splitText.lines.forEach((line) => {
+ const text = line.innerHTML;
+ line.innerHTML = `<span style="display: block; transform: translateY(70px);">${text}</span>`;
+});
+
+
+ScrollTrigger.create({
+ trigger: ".outro",
+ start: "top center",
+ onEnter: () => {
+   gsap.to(".outro-copy h2 .line span", {
+     translateY: 0,
+     duration: 1,
+     stagger: 0.1,
+     ease: "power3.out",
+     force3D: true,
+   });
+ },
+ onLeaveBack: () => {
+   gsap.to(".outro-copy h2 .line span", {
+     translateY: 70,
+     duration: 1,
+     stagger: 0.1,
+     ease: "power3.out",
+     force3D: true,
+   });
+ },
+ toggleActions: "play reverse play reverse",
+});
+
+
+
 // Hamburger menu toggle
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
