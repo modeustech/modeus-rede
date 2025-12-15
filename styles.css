@@ -482,7 +482,7 @@ figcaption > p {
   background-color: transparent;
   padding: 0.5em 1.5em;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.15em;
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -558,10 +558,6 @@ figcaption > p {
   width: 100%;
 }
 
-.brand-hero-content {
-  flex: 1;
-  max-width: 50%;
-}
 
 
 
@@ -2013,7 +2009,7 @@ figcaption > p {
     align-items: flex-start;
   }
 
-  .services-hero {
+  .services-hero, .brand-hero, .about-hero {
     padding: 6em 3em;
   }
 
@@ -2164,6 +2160,7 @@ figcaption > p {
     flex-direction: column;
     align-items: flex-start;
     padding: 4em 3em;
+    min-height: 300px;
   }
 
   .brand-orderchamp-cta {
@@ -2171,6 +2168,9 @@ figcaption > p {
     flex-direction: column;
     align-items: flex-start;
     padding: 3.5em 3em;
+  }
+  .brand-hero-inner {
+    margin-top: 2em
   }
 }
 
@@ -2230,9 +2230,6 @@ figcaption > p {
 
  
 
-  .brand-hero {
-    padding: 5.5em 2em;
-  }
 
 
 
@@ -2281,9 +2278,10 @@ figcaption > p {
   .brand-orderchamp-cta {
     width: calc(100% - 3em);
     padding: 3em 1.5em;
+    min-height: 300px;
   }
 
-  .services-hero {
+  .services-hero, .brand-hero, .about-hero {
     padding: 5em 2em;
   }
 
@@ -2315,12 +2313,14 @@ figcaption > p {
     font-size: 36px;
   }
 
-  .services-hero {
+  .services-hero, .brand-hero, .about-hero {
     padding: 5.5em 2em;
   }
 
 
-
+  .brand-hero-inner {
+    margin-top: 4em
+  }
   .services-grid {
     padding: 4em 2em;
     gap: 1.5em;
@@ -2480,10 +2480,7 @@ figcaption > p {
     gap: 2em;
   }
 
-  .about-story-content,
-  .about-story-highlights {
-    grid-column: span 1;
-  }
+ 
 
   .about-story-content h2 {
     font-size: 32px;
@@ -2548,7 +2545,7 @@ figcaption > p {
   }
 
   .team-card p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .about-gallery {
@@ -2684,7 +2681,7 @@ figcaption > p {
   }
 
   .configurator-description {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 1.5em;
   }
 
@@ -2693,17 +2690,15 @@ figcaption > p {
     margin-bottom: 1.5em;
   }
 
-  .configurator-options > div {
-    padding: 1em;
-  }
+
 
   .option-label {
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 0.4em;
   }
 
   .configurator-options p:last-child {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .configurator-cta {
@@ -2731,7 +2726,7 @@ figcaption > p {
   }
 
   .showroom-description {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 1.5em;
   }
 
@@ -2752,11 +2747,11 @@ figcaption > p {
   }
 
   .brochure-label {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .brochure-card p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .cta-partner {
@@ -2773,6 +2768,9 @@ figcaption > p {
   .archive-info {
     flex-direction: column;
     gap: 0.5em;
+  }
+  .brand-hero-inner {
+    margin-top: 2em
   }
 }
 
@@ -2864,7 +2862,7 @@ figcaption > p {
   }
 
   .cta-text {
-    font-size: 13px;
+    font-size: 14px;
   }
 
 
@@ -2928,4 +2926,25 @@ a {
   -webkit-appearance: none; /* helps avoid iOS default button styling */
   appearance: none; 
 
+}
+
+
+@media (max-width: 640px) {
+  /* Center hero CONTENT vertically on mobile for all but the main home hero */
+  .about-hero,
+  .brand-hero,
+  .services-hero,
+  .contact-hero,
+  .careers-hero {
+    min-height: 100vh;          /* fill the viewport height */
+    display: flex;              /* ensure it's a flex container */
+    align-items: center;        /* vertical centering */
+    justify-content: center;    /* optional: horizontal centering if single column */
+    padding-top: 5em;           /* tweak if nav overlaps */
+    padding-bottom: 5em;
+  }
+
+  .brand-hero-inner {
+    margin-top: 2em
+  }
 }
