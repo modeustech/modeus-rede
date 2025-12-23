@@ -159,7 +159,7 @@ const baseTilt = 0.4;
 
 function updateRotateButtonLabel() {
  if (!rotateBtn) return;
- rotateBtn.textContent = rotationEnabled ? "Rotate" : "Pause";
+ rotateBtn.textContent = rotationEnabled ? "Pause" : "Rotate";
 }
 
 
