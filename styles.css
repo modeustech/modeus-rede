@@ -1809,7 +1809,7 @@ figcaption > p {
   }
 
   .contact-form-area {
-    height: 80vh;
+    min-height: 80vh;
   }
 
   .contact-form-inner h2 {
@@ -2016,7 +2016,7 @@ figcaption > p {
   }
 
   .contact-form-area {
-    padding: 4em 3em 4.5em;
+    padding: 8em 3em 4.5em;
   }
 
   .team-snapshot {
@@ -2290,7 +2290,7 @@ figcaption > p {
   }
 
   .contact-form-area {
-    padding: 3.5em 2em 4em;
+    padding: 9em 2em 4em;
   }
 
   .contact-form-inner h2 {
@@ -2931,4 +2931,9 @@ a {
   .brand-hero-inner {
     margin-top: 2em
   }
+}
+
+
+.NnBn8c {
+  display: none !important;
 }
