@@ -69,6 +69,7 @@
   .footer-partner-btn:hover {
     background: #ffffff;
     color: #000000;
+    text-decoration: none;
   }
   
   .footer-partner-btn .arrow {
@@ -180,6 +181,13 @@
   
   .footer-top .logo {
     color: #ffffff;
+  }
+
+  .footer-logo {
+    height: 32px;
+    width: auto;
+    display: block;
+    margin-bottom: 1em;
   }
 
 
