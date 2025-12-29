@@ -540,77 +540,25 @@ if (footer) {
 
 
 // Dynamic header logo switch based on footer visibility
-// #region agent log
-fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:543',message:'Logo switch init - checking ScrollTrigger availability',data:{hasScrollTrigger:typeof ScrollTrigger!=='undefined',hasGsap:typeof gsap!=='undefined'},timestamp:Date.now(),sessionId:'debug-session',runId:'post-fix',hypothesisId:'B'})}).catch(()=>{});
-// #endregion
-const headerLogo = document.querySelector('.primary-nav img.logo') || document.querySelector('.primary-nav .logo');
-// #region agent log
-fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:545',message:'Header logo selector result (FIXED)',data:{found:!!headerLogo,selector:'.primary-nav img.logo or .primary-nav .logo',tagName:headerLogo?.tagName,className:headerLogo?.className,currentSrc:headerLogo?.src},timestamp:Date.now(),sessionId:'debug-session',runId:'post-fix',hypothesisId:'A'})}).catch(()=>{});
-// #endregion
-// #region agent log
-fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:545',message:'Header logo selector result',data:{found:!!headerLogo,selector:'.primary-nav .logo img',tagName:headerLogo?.tagName,className:headerLogo?.className,currentSrc:headerLogo?.src},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-// #endregion
-const siteFooter = document.querySelector('.site-footer');
-// #region agent log
-fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:547',message:'Footer selector result',data:{found:!!siteFooter,selector:'.site-footer'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-// #endregion
+const nav = document.querySelector(".primary-nav");
+const headerLogo = document.querySelector(".primary-nav img.logo");
+const siteFooter = document.querySelector(".site-footer");
 
-if (headerLogo && siteFooter) {
-  // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:550',message:'Creating ScrollTrigger for logo switch',data:{initialSrc:headerLogo.src},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-  // #endregion
+if (nav && headerLogo && siteFooter && typeof ScrollTrigger !== "undefined") {
+  const greenLogo = "./assets/Modeus secondary II.png";
+  const whiteLogo = "./assets/Modeus_logo_white.png"; // use svg if you have it
+
   ScrollTrigger.create({
     trigger: siteFooter,
-    start: "bottom bottom", // When footer bottom reaches viewport bottom (user at end of page)
-    end: "bottom top",    // When footer bottom leaves viewport top
-    onEnter: () => {
-      const footerRect = siteFooter.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      const footerTopVisible = viewportHeight - footerRect.top;
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:567',message:'onEnter callback fired - timing check',data:{beforeSrc:headerLogo.src,footerTop:footerRect.top,viewportHeight:viewportHeight,footerTopVisible:footerTopVisible,scrollY:window.scrollY},timestamp:Date.now(),sessionId:'debug-session',runId:'timing-fix',hypothesisId:'E'})}).catch(()=>{});
-      // #endregion
-      headerLogo.src = './assets/Modeus_logo_white.png';
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:571',message:'onEnter - after setting white logo',data:{afterSrc:headerLogo.src},timestamp:Date.now(),sessionId:'debug-session',runId:'timing-fix',hypothesisId:'D'})}).catch(()=>{});
-      // #endregion
-    },
-    onLeave: () => {
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:559',message:'onLeave callback fired',data:{beforeSrc:headerLogo.src},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-      // #endregion
-      headerLogo.src = './assets/Modeus secondary II.png';
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:561',message:'onLeave - after setting colored logo',data:{afterSrc:headerLogo.src},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-      // #endregion
-    },
-    onEnterBack: () => {
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:564',message:'onEnterBack callback fired',data:{beforeSrc:headerLogo.src},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-      // #endregion
-      headerLogo.src = './assets/Modeus_logo_white.png';
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:566',message:'onEnterBack - after setting white logo',data:{afterSrc:headerLogo.src},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-      // #endregion
-    },
-    onLeaveBack: () => {
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:569',message:'onLeaveBack callback fired',data:{beforeSrc:headerLogo.src},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-      // #endregion
-      headerLogo.src = './assets/Modeus secondary II.png';
-      // #region agent log
-      fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:571',message:'onLeaveBack - after setting colored logo',data:{afterSrc:headerLogo.src},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-      // #endregion
-    },
+    start: () => `top top+=${nav.offsetHeight}`,   // when footer reaches nav area
+    end: () => `bottom top+=${nav.offsetHeight}`,  // until footer is past nav area
+    onEnter: () => (headerLogo.src = whiteLogo),
+    onEnterBack: () => (headerLogo.src = whiteLogo),
+    onLeave: () => (headerLogo.src = greenLogo),
+    onLeaveBack: () => (headerLogo.src = greenLogo),
   });
-  // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:574',message:'ScrollTrigger created successfully',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-  // #endregion
-} else {
-  // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/9578729d-818e-4c64-8fd6-cc9242d40eac',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:576',message:'Logo switch skipped - elements not found',data:{hasHeaderLogo:!!headerLogo,hasSiteFooter:!!siteFooter},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-  // #endregion
 }
+
 
 
 // Footer inline 3D chair model
@@ -698,5 +646,3 @@ if (chairCanvas) {
  }
   animateChair();
 }
-
-

@@ -236,3 +236,28 @@
               pointer-events: auto;
             }
         }          
+
+
+        /* Masked SVG logo that can change color via background-color */
+.primary-nav .logo--mask {
+  height: 40px;              /* match your current logo height */
+  width: 160px;              /* tweak until it matches your SVG’s natural width */
+  display: block;
+
+  background-color: #1d7560; /* default: green */
+
+  /* Use the SVG as a mask */
+  -webkit-mask-image: url("./assets/Modeus_logo_white.svg");
+  mask-image: url("./assets/Modeus_logo_white.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: left center;
+  mask-position: left center;
+}
+
+/* When nav is over dark background (footer), make logo white */
+.primary-nav.is-dark .logo--mask {
+  background-color: #ffffff;
+}
