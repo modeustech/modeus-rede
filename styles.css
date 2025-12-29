@@ -525,6 +525,22 @@ figcaption > p {
   color: #8c8c8c;
 }
 
+.configurator-embed-container {
+  width: 100%;
+  height: calc(100vh - 80px);
+  margin-top: 7rem;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+.configurator-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
 .panel-tag {
   font-size: 11px;
   letter-spacing: 0.35em;
@@ -2661,6 +2677,11 @@ figcaption > p {
     padding: 4em 1.5em;
     gap: 2em;
   }
+  
+  .configurator-embed-container {
+    height: calc(100vh - 70px);
+    margin-top: 70px;
+  }
 
   .configurator-copy,
   .configurator-panel {
@@ -2699,6 +2720,11 @@ figcaption > p {
   .configurator-panel-inner {
     padding: 2em;
     min-height: 240px;
+  }
+  
+  .configurator-embed-container {
+    height: calc(100vh - 60px);
+    margin-top: 60px;
   }
 
   .showroom {
