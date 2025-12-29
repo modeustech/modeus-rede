@@ -183,11 +183,15 @@
     color: #ffffff;
   }
 
-  .footer-logo {
+  .footer-top img.footer-logo,
+  .footer-top .footer-logo {
     height: 32px;
     width: auto;
+    max-width: 100%;
     display: block;
     margin-bottom: 1em;
+    opacity: 1;
+    visibility: visible;
   }
 
 

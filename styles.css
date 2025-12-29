@@ -10,9 +10,21 @@ a {
   -webkit-appearance: none; /* helps avoid iOS default button styling */
   appearance: none; 
   color: #000000; 
+  text-decoration: none;
 }
 
-
+.nav-links a,
+.nav-links a:hover,
+.nav-cta,
+.nav-cta:hover,
+.cta-button,
+.cta-button:hover,
+.footer-partner-btn,
+.footer-partner-btn:hover,
+.partner-login,
+.partner-login:hover {
+  text-decoration: none;
+}
 
 * {
   margin: 0;
@@ -418,14 +430,13 @@ figcaption > p {
   align-items: center;
   justify-content: center;
   gap: 0.6em;
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
-    background-color 0.2s ease;
+
 }
 
 .partner-login:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
-  background-color: #13a26d;
+ font: black;
+  background-color: white;
+  border: #0f8c5c 1px solid;
 }
 
 .configurator {
