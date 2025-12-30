@@ -240,7 +240,7 @@
 
         /* Masked SVG logo that can change color via background-color */
 .primary-nav .logo--mask {
-  height: 40px;              /* match your current logo height */
+  height: 50px;              /* match your current logo height */
   width: 160px;              /* tweak until it matches your SVG’s natural width */
   display: block;
 
