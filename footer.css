@@ -114,7 +114,7 @@
   }
   
   .footer-contact a,
-  .footer-pages a {
+  .footer-pages a,   .footer-social a, .footer-offices a, .footer-contact a, .footer-address {
     display: block;
     margin-bottom: 0.6em;
     text-transform: uppercase;
