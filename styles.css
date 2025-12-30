@@ -892,6 +892,8 @@ figcaption > p {
   align-items: center;
   justify-content: center;
   z-index: 999;
+  overflow: hidden;
+  touch-action: none;
 }
 
 .career-modal.is-open {
@@ -902,11 +904,14 @@ figcaption > p {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
+  touch-action: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .career-modal-dialog {
   position: relative;
   max-width: 640px;
+  max-height: 90vh;
   width: calc(100% - 3em);
   background: #fffdf9;
   border-radius: 24px;
@@ -916,6 +921,7 @@ figcaption > p {
   display: flex;
   flex-direction: column;
   gap: 0.9em;
+  overflow: hidden;
 }
 
 .career-modal-close {
@@ -940,8 +946,65 @@ figcaption > p {
   color: #8c8c8c;
 }
 
+.career-modal-body {
+  overflow-y: auto;
+  max-height: calc(90vh - 250px);
+  padding-right: 0.5em;
+  padding-bottom: 1em;
+  flex: 1;
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* Custom scrollbar for modal body */
+.career-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.career-modal-body::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 3px;
+}
+
+.career-modal-body::-webkit-scrollbar-thumb {
+  background: #d0d0d0;
+  border-radius: 3px;
+}
+
+.career-modal-body::-webkit-scrollbar-thumb:hover {
+  background: #b0b0b0;
+}
+
 .career-modal-body p + p {
   margin-top: 0.8em;
+}
+
+.career-full h3,
+.career-modal-body h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  color: #2a2a2a;
+}
+
+.career-full h3:first-child,
+.career-modal-body h3:first-child {
+  margin-top: 0;
+}
+
+.career-full ul,
+.career-modal-body ul {
+  margin: 0.8em 0;
+  padding-left: 1.5em;
+  list-style: disc;
+}
+
+.career-full li,
+.career-modal-body li {
+  margin-bottom: 0.5em;
+  line-height: 1.6;
 }
 
 .career-modal-apply {
@@ -966,6 +1029,14 @@ figcaption > p {
   .careers-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  
+  .career-modal-dialog {
+    max-height: 85vh;
+  }
+  
+  .career-modal-body {
+    max-height: calc(85vh - 250px);
+  }
 }
 
 
@@ -980,6 +1051,22 @@ figcaption > p {
   }
   .careers-list {
     grid-template-columns: 1fr;
+  }
+  
+  .career-modal-dialog {
+    max-width: calc(100% - 2em);
+    max-height: 90vh;
+    padding: 2em 1.5em 1.5em;
+  }
+  
+  .career-modal-body {
+    max-height: calc(90vh - 220px);
+  }
+  
+  .career-modal-close {
+    top: 1em;
+    right: 1em;
+    font-size: 24px;
   }
 }
 .contact-hero {
@@ -1451,6 +1538,7 @@ figcaption > p {
 .brochures {
   padding: 8em 6em;
   background: #e9e2d2;
+  margin-bottom: 12em;
 }
 
 .brochures-header {
@@ -2482,6 +2570,27 @@ figcaption > p {
     padding: 0.6em 0.9em;
     font-size: 10px;
     letter-spacing: 0.2em;
+  }
+  
+  .career-modal-dialog {
+    max-width: calc(100% - 1.5em);
+    max-height: 95vh;
+    padding: 1.5em 1.25em 1.25em;
+  }
+  
+  .career-modal-body {
+    max-height: calc(95vh - 200px);
+    padding-right: 0.25em;
+  }
+  
+  .career-modal-title {
+    font-size: 20px;
+  }
+  
+  .career-modal-close {
+    top: 0.75em;
+    right: 0.75em;
+    font-size: 28px;
   }
 
   .about-hero {

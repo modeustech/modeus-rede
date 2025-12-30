@@ -382,10 +382,15 @@ if (hamburger && navLinks) {
        navLinks.contains(clickedElement) ||
        (navCta && navCta.contains(clickedElement));
     
-     if (!isClickInsideMenu) {
+     // Don't close menu if clicking on career modal buttons
+     const isCareerButton = clickedElement.closest(".career-readmore") || 
+                            clickedElement.closest(".career-card");
+     if (!isClickInsideMenu && !isCareerButton) {
        closeMenu();
      }
    }
+ });
+}
 
 
 // Careers modal
@@ -412,28 +417,60 @@ if (careerCards.length && careerModal) {
    if (modalMeta) modalMeta.textContent = meta;
    if (modalBody && fullBody) {
      modalBody.innerHTML = fullBody.innerHTML;
+     // Reset scroll position to top
+     modalBody.scrollTop = 0;
    }
    if (modalApply && applyLink) {
      modalApply.href = applyLink.href;
      modalApply.textContent = applyLink.textContent || "Apply via email";
    }
 
+   // Save current scroll position
+   const scrollY = window.scrollY;
+   document.body.style.top = `-${scrollY}px`;
+
+   // Disable Lenis smooth scroll if active
+   if (lenis) {
+     lenis.stop();
+   }
 
    careerModal.classList.add("is-open");
    document.body.style.overflow = "hidden";
+   document.body.style.position = "fixed";
+   document.body.style.width = "100%";
+   
+   // Store scroll position for restoration
+   document.body.dataset.scrollY = scrollY;
  }
 
 
  function closeCareerModal() {
    careerModal.classList.remove("is-open");
+   
+   // Restore scroll position
+   const scrollY = document.body.dataset.scrollY || 0;
    document.body.style.overflow = "";
+   document.body.style.position = "";
+   document.body.style.width = "";
+   document.body.style.top = "";
+   window.scrollTo(0, parseInt(scrollY || 0, 10));
+   delete document.body.dataset.scrollY;
+   
+   // Re-enable Lenis smooth scroll if it was active
+   if (lenis) {
+     lenis.start();
+   }
  }
 
 
  careerCards.forEach((card) => {
    const readMoreBtn = card.querySelector(".career-readmore");
    if (readMoreBtn) {
-     readMoreBtn.addEventListener("click", () => openCareerModal(card));
+     readMoreBtn.addEventListener("click", (e) => {
+       e.preventDefault();
+       e.stopPropagation();
+       openCareerModal(card);
+     });
    }
  });
 
@@ -449,7 +486,6 @@ if (careerCards.length && careerModal) {
    }
  });
 }
- });
 
 
  // Close menu on window resize if it's open and we're above mobile breakpoint
@@ -458,7 +494,6 @@ if (careerCards.length && careerModal) {
      closeMenu();
    }
  });
-}
 
 
 
