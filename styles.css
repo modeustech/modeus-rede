@@ -1685,6 +1685,7 @@ figcaption > p {
   gap: 0.6em;
   transition: background 0.2s ease, color 0.2s ease;
   line-height: normal;
+  text-align: center;
 }
 
 .cta-button:hover {
