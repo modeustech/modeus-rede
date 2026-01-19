@@ -4,6 +4,56 @@ const isTouch = window.matchMedia("(pointer: coarse)").matches;
 
 let lenis = null;
 
+const CONSENT_STORAGE_KEY = "cookie_consent";
+const consentBanner = document.querySelector(".cookie-banner");
+const consentAcceptBtn = document.querySelector(".cookie-accept");
+const consentRejectBtn = document.querySelector(".cookie-reject");
+
+function updateConsentMode(consentState, persist = true) {
+  const isAccepted = consentState === "accepted";
+  const consentUpdate = {
+    ad_storage: isAccepted ? "granted" : "denied",
+    analytics_storage: isAccepted ? "granted" : "denied",
+    ad_user_data: isAccepted ? "granted" : "denied",
+    ad_personalization: isAccepted ? "granted" : "denied",
+    functionality_storage: "granted",
+    security_storage: "granted",
+  };
+
+  if (typeof window.gtag === "function") {
+    window.gtag("consent", "update", consentUpdate);
+  } else if (window.dataLayer) {
+    window.dataLayer.push(["consent", "update", consentUpdate]);
+  }
+
+  if (persist) {
+    localStorage.setItem(CONSENT_STORAGE_KEY, consentState);
+  }
+
+  if (consentBanner) {
+    consentBanner.hidden = true;
+  }
+}
+
+function initCookieConsent() {
+  if (!consentBanner) return;
+
+  const savedConsent = localStorage.getItem(CONSENT_STORAGE_KEY);
+  if (savedConsent === "accepted" || savedConsent === "rejected") {
+    updateConsentMode(savedConsent, false);
+    return;
+  }
+
+  consentBanner.hidden = false;
+  if (consentAcceptBtn) {
+    consentAcceptBtn.addEventListener("click", () => updateConsentMode("accepted"));
+  }
+  if (consentRejectBtn) {
+    consentRejectBtn.addEventListener("click", () => updateConsentMode("rejected"));
+  }
+}
+
+initCookieConsent();
 
 if (!isTouch) {
  lenis = new Lenis({

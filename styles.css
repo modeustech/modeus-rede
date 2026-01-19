@@ -3091,3 +3091,77 @@ a {
 .NnBn8c {
   display: none !important;
 }
+
+.cookie-banner {
+  position: fixed;
+  left: 3.5rem;
+  right: 3.5rem;
+  bottom: 3rem;
+  z-index: 9999;
+  background: #ffffff;
+  border: 1px solid #000000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.cookie-banner__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+}
+
+.cookie-banner__content p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #000000;
+}
+
+.cookie-banner__content a {
+  text-decoration: underline;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.cookie-btn {
+  border: 1px solid #000000;
+  background: transparent;
+  padding: 0.5rem 1.25rem;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  color: #000000;
+}
+
+.cookie-btn:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .cookie-banner {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .cookie-banner__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cookie-banner__actions {
+    width: 100%;
+  }
+
+  .cookie-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
