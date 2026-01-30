@@ -484,6 +484,7 @@ figcaption > p {
   letter-spacing: 0.3em;
   font-size: 11px;
   margin-bottom: 0.4em;
+  font-weight: bold;
 }
 
 .configurator-cta {
