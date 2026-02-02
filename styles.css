@@ -1615,16 +1615,26 @@ figcaption > p {
 }
 
 .partner-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-width: 120px;
   padding: 0.75em 1.5em;
-  border-radius: 999px;
-  border: 1px solid #e0ded8;
-  background: #fbf9f4;
-  font-size: 0.8rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #8c8c8c;
-  text-align: center;
+  
+}
+
+.partner-logo picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-logo img {
+  max-height: 120px;
+  max-width: 180px;
+  width: auto;
+  height: auto;
+  display: block;
 }
 
 .brand-orderchamp-cta {
