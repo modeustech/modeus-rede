@@ -86,10 +86,11 @@
   
   .footer-description {
     margin-top: 1em;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
     max-width: 320px;
     color: #ffffff;
+    letter-spacing: 0.2em;
   }
   
   .footer-label {
@@ -109,9 +110,7 @@
     transition: opacity 0.3s ease;
   }
   
-  .footer-description {
-    color: #cccccc;
-  }
+
   
   .footer-contact a,
   .footer-pages a,   .footer-social a, .footer-offices a, .footer-contact a, .footer-address {
@@ -192,7 +191,9 @@
   
   .site-footer .footer-top .logo,
   .footer-top p.logo {
-    color: #ffffff !important;
+    color: #e9e2d2 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
   }
 
   .footer-top img.footer-logo,
