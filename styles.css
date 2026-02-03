@@ -1609,7 +1609,6 @@ figcaption > p {
 .partners-logos {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.5em 3em;
   align-items: center;
   justify-content: center;
 }
@@ -1619,7 +1618,7 @@ figcaption > p {
   align-items: center;
   justify-content: center;
   min-width: 120px;
-  padding: 0.75em 1.5em;
+  padding: 0.75em 1em;
   
 }
 
@@ -1630,10 +1629,8 @@ figcaption > p {
 }
 
 .partner-logo img {
-  max-height: 120px;
-  max-width: 180px;
-  width: auto;
-  height: auto;
+  max-width: 280px;
+  height: 100%;
   display: block;
 }
 
