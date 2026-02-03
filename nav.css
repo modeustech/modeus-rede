@@ -75,6 +75,12 @@
     color: #000000;
     text-transform: none;
   }
+
+  .primary-nav .nav-links a.nav-link--active {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.35em;
+  }
   
   .nav-cta {
     background-color: transparent;
