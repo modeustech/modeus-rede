@@ -778,6 +778,63 @@ figcaption > p {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
 }
 
+/* Persona landing pages */
+.landing-faq {
+  padding: 6em 6em;
+  background: #ffffff;
+  min-height: auto;
+}
+
+.landing-faq-header {
+  max-width: 760px;
+  margin: 0 auto 2.5em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.landing-faq-items {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.landing-faq details {
+  border: 1px solid #e4dbcd;
+  border-radius: 18px;
+  background: #fffdf9;
+  padding: 1.2em 1.4em;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.landing-faq summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #111111;
+}
+
+.landing-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.landing-faq details[open] {
+  background: #ffffff;
+}
+
+.landing-faq-answer {
+  margin-top: 0.85em;
+}
+
+.landing-faq-answer p {
+  margin: 0;
+}
+
 .service-number {
   font-size: 12px;
   letter-spacing: 0.45em;
@@ -1816,6 +1873,10 @@ figcaption > p {
   .hero {
     gap: 8em;
     padding: 6em 4em;
+  }
+
+  .landing-faq {
+    padding: 5em 4em;
   }
 
 
@@ -3088,6 +3149,10 @@ a {
     justify-content: center;    /* optional: horizontal centering if single column */
     padding-top: 5em;           /* tweak if nav overlaps */
     padding-bottom: 5em;
+  }
+
+  .landing-faq {
+    padding: 4em 2em;
   }
 
   .brand-hero-inner {
