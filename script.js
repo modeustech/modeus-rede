@@ -55,6 +55,80 @@ function initCookieConsent() {
 
 initCookieConsent();
 
+const SIGNUP_LINK_SELECTOR = 'a[href*="orderportal.modeus.com/login?signup=yes"]';
+const TRUSTED_ACCOUNT_EVENT_ORIGINS = [
+  "https://orderportal.modeus.com",
+  "https://test-33cae.web.app",
+];
+let hasTrackedAccountCreated = false;
+
+function pushDataLayerEvent(eventName, payload = {}) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: eventName,
+    ...payload,
+  });
+}
+
+function detectLanguage() {
+  return document.documentElement.lang || (window.location.pathname.startsWith("/nl") ? "nl" : "en");
+}
+
+function trackPartnerSignupClick(event) {
+  const signupLink = event.target.closest(SIGNUP_LINK_SELECTOR);
+  if (!signupLink) return;
+
+  pushDataLayerEvent("sign_up_start", {
+    method: "partner_portal",
+    link_url: signupLink.href,
+    page_path: window.location.pathname,
+    page_language: detectLanguage(),
+  });
+}
+
+function trackAccountCreated(source, extra = {}) {
+  if (hasTrackedAccountCreated) return;
+  hasTrackedAccountCreated = true;
+
+  pushDataLayerEvent("account_created", {
+    source,
+    page_path: window.location.pathname,
+    page_language: detectLanguage(),
+    ...extra,
+  });
+}
+
+function checkAccountCreatedFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const hasSuccessSignal =
+    params.get("account_created") === "1" ||
+    params.get("signup") === "success" ||
+    params.get("registration") === "success";
+
+  if (hasSuccessSignal) {
+    trackAccountCreated("return_url");
+  }
+}
+
+function initSignupTracking() {
+  document.addEventListener("click", trackPartnerSignupClick);
+  checkAccountCreatedFromUrl();
+
+  window.addEventListener("message", (event) => {
+    if (!TRUSTED_ACCOUNT_EVENT_ORIGINS.includes(event.origin)) return;
+    if (!event.data || typeof event.data !== "object") return;
+
+    const eventType = event.data.event || event.data.type;
+    if (eventType === "account_created" || eventType === "signup_success") {
+      trackAccountCreated("post_message", {
+        message_origin: event.origin,
+      });
+    }
+  });
+}
+
+initSignupTracking();
+
 if (!isTouch) {
  lenis = new Lenis({
    smoothWheel: true,
@@ -155,7 +229,7 @@ let dragStartRotationY = 0;
 
 
 const loader = new THREE.GLTFLoader();
-loader.load("./assets/chair_1.glb", function (gltf) {
+loader.load("/assets/chair_1.glb", function (gltf) {
  model = gltf.scene;
  model.traverse((node) => {
    if (node.isMesh) {
@@ -630,8 +704,8 @@ const headerLogo = document.querySelector(".primary-nav img.logo");
 const siteFooter = document.querySelector(".site-footer");
 
 if (nav && headerLogo && siteFooter && typeof ScrollTrigger !== "undefined") {
-  const greenLogo = "./assets/Modeus secondary II.png";
-  const whiteLogo = "./assets/Modeus_logo_white.png"; // use svg if you have it
+  const greenLogo = "/assets/Modeus secondary II.png";
+  const whiteLogo = "/assets/Modeus_logo_white.png"; // use svg if you have it
 
   ScrollTrigger.create({
     trigger: siteFooter,
@@ -684,7 +758,7 @@ if (chairCanvas) {
  chairScene.add(chairFillLight);
   let chairModel = null;
  const chairLoader = new THREE.GLTFLoader();
-  chairLoader.load("./assets/bar.glb", function (gltf) {
+  chairLoader.load("/assets/bar.glb", function (gltf) {
    chairModel = gltf.scene;
    chairModel.traverse((node) => {
      if (node.isMesh) {
