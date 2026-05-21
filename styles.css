@@ -493,6 +493,13 @@ figcaption > p {
   gap: 1em;
 }
 
+.hero-cta-note {
+  max-width: 560px;
+  margin-top: 0.75em;
+  font-size: 14px;
+  color: #3a3a3a;
+}
+
 .ghost-btn {
   -webkit-appearance: none; /* helps avoid iOS default button styling */
   appearance: none;
@@ -660,6 +667,19 @@ figcaption > p {
   gap: 2em;
 }
 
+.section-heading {
+  grid-column: 1 / -1;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: 400;
+}
+
 .highlight-card {
   border: 1px solid #ede5da;
   border-radius: 18px;
@@ -668,6 +688,36 @@ figcaption > p {
   display: flex;
   flex-direction: column;
   gap: 0.8em;
+}
+
+.configurator-card-image {
+  width: 100%;
+  display: block;
+  margin-top: 1em;
+  border-radius: 16px;
+  border: 1px solid #ede5da;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.configurator-workflow {
+  grid-template-columns: 1fr;
+}
+
+.configurator-workflow .highlight-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.8fr);
+  align-items: center;
+  gap: 1em 2em;
+}
+
+.configurator-workflow .highlight-card > :not(.configurator-card-image) {
+  grid-column: 1;
+}
+
+.configurator-workflow .configurator-card-image {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  margin-top: 0;
 }
 
 
@@ -749,10 +799,42 @@ figcaption > p {
   align-items: center;
 }
 
+.services-hero--visual {
+  gap: 4em;
+  justify-content: space-between;
+}
+
 .services-hero-content {
   max-width: 760px;
   display: flex;
   flex-direction: column;
+}
+
+.services-hero-content .hero-lede {
+  margin-bottom: 1.5em;
+}
+
+.configurator-hero-visual {
+  width: clamp(520px, 50vw, 760px);
+  margin: 0;
+  padding: 0.8em;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.12);
+}
+
+.configurator-hero-visual img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.configurator-hero-visual figcaption {
+  margin-top: 0.9em;
+  color: #3a3a3a;
+  font-size: 14px;
+  text-align: center;
 }
 
 
@@ -2022,6 +2104,20 @@ figcaption > p {
     padding: 6em 3em;
   }
 
+  .services-hero--visual {
+    height: auto;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3em;
+  }
+
+  .configurator-hero-visual {
+    width: 100%;
+    max-width: 680px;
+  }
+
   
 
   .model-frame {
@@ -2168,6 +2264,20 @@ figcaption > p {
   .brand-highlights {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     padding: 3em 3em;
+  }
+
+  .configurator-workflow {
+    grid-template-columns: 1fr;
+  }
+
+  .configurator-workflow .highlight-card {
+    grid-template-columns: 1fr;
+  }
+
+  .configurator-workflow .configurator-card-image {
+    grid-column: 1;
+    grid-row: auto;
+    margin-top: 1em;
   }
 
   .brand-gallery {

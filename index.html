@@ -1,273 +1,301 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modeus</title>
-    <link rel="icon" type="image/svg+xml" href="./assets/modeus-favicon.svg" />
+    <title>3D configurator voor offertes en orders | Modeus</title>
+    <meta
+      name="description"
+      content="Gebruik de Modeus configurator als branded 2-in-1 tool voor klantpresentaties, offertes en orders."
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/modeus-favicon.svg" />
 
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./nav.css" />
-    <link rel="stylesheet" href="./footer.css" />  
-  
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/nav.css" />
+    <link rel="stylesheet" href="/footer.css" />
+
+    <meta property="og:title" content="3D configurator voor offertes en orders | Modeus" />
+    <meta
+      property="og:description"
+      content="Verkoop in 3D, bewaar offertes en bestel vanuit dezelfde branded configurator."
+    />
+
     <!-- Google Consent Mode v2 (default denied) -->
-<script>
+    <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('consent', 'default', {
-        ad_storage: 'denied',
-        analytics_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-        functionality_storage: 'granted',
-        security_storage: 'granted',
-        wait_for_update: 500
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        functionality_storage: "granted",
+        security_storage: "granted",
+        wait_for_update: 500,
       });
     </script>
     <!-- End Google Consent Mode v2 (default denied) -->
     <!-- Google Tag Manager -->
 
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KWXCKL2R');</script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KWXCKL2R");
+    </script>
 
     <!-- End Google Tag Manager -->
   </head>
   <body>
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWXCKL2R"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KWXCKL2R"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <nav class="primary-nav">
-      <a href="./index.html">
-        <img src="./assets/Modeus secondary II.png" alt="Modeus logo" class="logo" />
+      <a href="/nl">
+        <img src="/assets/Modeus secondary II.png" alt="Logo van Modeus" class="logo" />
       </a>
-      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <button class="hamburger" aria-label="Menu openen of sluiten" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
       <div class="nav-links">
-        <a href="./about.html">About us</a>
-        <a href="./configurator.html">3D Configurator</a>
-        <a href="./brand.html">Brand</a>
-        <a href="./services.html">Services</a>
-        <div class="lang-switcher" aria-label="Language switcher">
-          <a href="./index-nl.html" class="lang-link">NL</a>
+        <a href="/nl/about">Over ons</a>
+        <a href="https://configurator.modeus.com/" target="_blank" rel="noopener noreferrer">3D Configurator</a>
+        <a href="/nl/brand">Merk</a>
+        <a href="/nl/services">Diensten</a>
+        <div class="lang-switcher" aria-label="Taalkeuze">
+          <a href="/nl/partner-configurator" class="lang-link lang-link--active">NL</a>
           <span class="lang-divider">/</span>
-          <a href="./index.html" class="lang-link lang-link--active">EN</a>
+          <a href="/partner-configurator" class="lang-link">EN</a>
         </div>
       </div>
-      <a class="nav-cta" href="https://orderportal.modeus.com/dashboard" target="_blank" rel="noopener noreferrer">Portal login</a>
+      <a class="nav-cta" href="https://orderportal.modeus.com/dashboard" target="_blank" rel="noopener noreferrer"
+        >Portal login</a
+      >
     </nav>
 
-    <section class="hero">
-      <p class="scroll-label left">Scroll down</p>
-      <div class="hero-content">
-        <p class="eyebrow">Design, co‑creation & production</p>
-        <h1>
-          <span>Interior</span>
-          <span>Solutions</span>
-          <span>by</span>
-          <span>MODEUS</span>
-        </h1>
-        <p class="hero-description">
-          Proven chair concepts and the essential tools to scale your store or project
+    <header class="services-hero services-hero--visual">
+      <div class="services-hero-content">
+        <p class="eyebrow">Voor dealers en professionele kopers</p>
+        <h1>Verkoop in 3D. <br> Bestel op een plek.</h1>
+        <p class="hero-lede">
+          De Modeus configurator is een 2-in-1 tool: presentatiemodus voor klantgesprekken en offertes, en buyer mode wanneer u klaar bent om te
+          bestellen - met uw merk in de ervaring.
         </p>
-      </div>
-      <div class="hero-media">
-        <div class="model-frame">
-          <div class="model"></div>
-        </div>
-        <div class="hero-controls">
-          <button class="outline rotate-btn">Pause</button>
-          <button class="outline reset-btn">Reset</button>
-        </div>
-      </div>
-      <p class="scroll-label right">Scroll down</p>
-    </section>
-
-    
-
-    <section class="outro">
-      <div class="outro-copy">
-        <h2>
-          Modeus designs and produces complete chair concepts, from first sketch
-         to labeled, launch-ready product.
-
-        </h2>
-        <p>Phone <span><a href="tel:+31887863536">+31 (0)88 786 3536</a></span></p>
-        <p>Email <span><a href="mailto:studio@modeus.com">info@modeus.com</a></span></p>
-      </div>
-    </section>
-
-    <section id="gallery" class="gallery">
-      <div class="gallery-header">
-        <p class="eyebrow">Modeus designs</p>
-        <h3>A chair for every space and storefront</h3>
-      </div>
-      <div class="gallery-scroll-wrapper">
-        <button class="gallery-nav gallery-nav--prev" aria-label="Vorige afbeelding">‹</button>
-        <div class="gallery-scroll" id="galleryScroll">
-          <figure class="gallery-portrait-card">
-            <img src="./assets/Jesper Oktober-108.jpg" alt="Lifestyle 1" />
-
-          </figure>
-          <figure class="gallery-portrait-card">
-            <img src="./assets/DSC_1906.jpg" alt="Lifestyle 2" />
-
-          </figure>
-          <figure class="gallery-portrait-card">
-            <img src="./assets/DSC_2148.jpg" alt="Lifestyle 3" />
-
-          </figure>
-          <figure class="gallery-portrait-card">
-            <img src="./assets/JH_Makio_5.jpg" alt="Lifestyle 4" />
-
-          </figure>
-          <figure class="gallery-portrait-card">
-            <img src="./assets/Jesper Oktober-045.jpg" alt="Lifestyle 4" />
-
-          </figure>
-          <figure class="gallery-portrait-card">
-            <img src="./assets/JH_Makio_1.jpeg" alt="Lifestyle 4" />
-
-          </figure>
-          <figure class="gallery-portrait-card">
-            <img src="./assets/JH_Hofu_Surnu_takko_1.jpeg" alt="Lifestyle 4" />
-
-          </figure>
-        </div>
-        <button class="gallery-nav gallery-nav--next" aria-label="Volgende afbeelding">›</button>
-        <div class="gallery-scroll-progress">
-          <div class="gallery-scroll-progress-bar"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="configurator" class="configurator">
-      <div class="configurator-copy">
-        <p class="eyebrow">3D chair configurator</p>
-        <h3>From vision to 3D design in minutes</h3>
-        <p class="configurator-description">
-          See your vision come to life instantly. Our 3D configurator lets you experiment with 60+ colors, various seat models, and numerous frame options in real-time.  Get instant pricing, validate every detail, and order with confidence. Choose from our 'ready-to-ship' stock for immediate delivery, or configure your custom design with a lead time of under 12 weeks.
-        </p>
-        <div class="configurator-options">
-          <div>
-            <p class="option-label">Why use our configurator?</p>
-            <p>✓ See exactly what you're ordering<br>✓ Get instant pricing<br>✓ Co-create with your customers</p>
-          </div>
-          <div>
-            <p class="option-label">What you can customize</p>
-            <p>60+ fabric options · various seats and frames</p>
-          </div>
-          <div>
-            <p class="option-label">Flexible delivery</p>
-            <p>Ready-to-ship: 1 week ( select options ) </br> Made-to-order: 10–12 weeks (60+ colors)</p>
-          </div>
-          <div>
-            <p class="option-label">Perfect for</p>
-            <p>Physical & online retailers · Interior professionals</br>· Offices & hospitality</p>
-          </div>
-        </div>
         <div class="configurator-cta">
-          <a href="./configurator.html" target="_blank" rel="noopener noreferrer" class="ghost-btn">Start designing now</a>
+          <a
+            id="cta-partner-configurator-top"
+            class="cta-button"
+            href="https://configurator.modeus.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Schrijf u gratis in</a
+          >
         </div>
       </div>
-      <div class="configurator-panel">
-        <div class="configurator-panel-inner">
-          <img src="./assets/3d_image_yanai.png" alt="3D configurator preview - Yanai chair" />
-        </div>
-      </div>
-    </section>
+      <figure class="configurator-hero-visual">
+        <img
+          src="/assets/buyer.png"
+          alt="Modeus configurator in buyer mode met een 3D-stoel, stofopties en winkelwagenknop"
+        />
+      </figure>
+    </header>
 
-    <section class="partners">
-      <div class="partners-header">
-        <p class="eyebrow">Partners</p>
-        <h3>Brands & retailers we work with</h3>
-      </div>
-      <div class="partners-logos">
-        <a class="partner-logo" href="https://hellochair.nl/collections/jesper-home" target="_blank" rel="noopener noreferrer">
-          <picture>
-            <source srcset="./assets/hello-chair_1x.webp 1x, ./assets/hello-chair_2x.webp 2x" type="image/webp" />
-            <img src="./assets/hello-chair_1x.png" srcset="./assets/hello-chair_1x.png 1x, ./assets/hello-chair_2x.png 2x" alt="Hello Chair" loading="lazy" />
-          </picture>
-        </a>
-        <a class="partner-logo" href="https://www.wehkamp.nl/meubels/jesper-home/" target="_blank" rel="noopener noreferrer">
-          <picture>
-            <source srcset=".assets/wehkamp_crisp_1x.png ./assets/wehkamp_2x.webp 2x" type="image/webp" />
-            <img src="./assets/wehkamp_1x.png" srcset="./assets/wehkamp_1x.png 1x, ./assets/wehkamp_2x.png 2x" alt="Wehkamp" loading="lazy" />
-          </picture>
-        </a>
-        <a class="partner-logo" href="https://www.swan-products.nl/flexaro" target="_blank" rel="noopener noreferrer">
-          <picture>
-            <source srcset="./assets/flexaro_1x.webp 1x, ./assets/flexaro_2x.webp 2x" type="image/webp" />
-            <img src="./assets/flexaro_1x.png" srcset="./assets/flexaro_1x.png 1x, ./assets/flexaro_2x.png 2x" alt="Flexaro" loading="lazy" />
-          </picture>
-        </a>
-        <a class="partner-logo" href="https://loods5.nl/merken/jesper-home" target="_blank" rel="noopener noreferrer">
-          <picture>
-            <source srcset="./assets/loods-5_1x.webp 1x, ./assets/loods-5_2x.webp 2x" type="image/webp" />
-            <img src="./assets/loods-5_1x.png" srcset="./assets/loods-5_1x.png 1x, ./assets/loods-5_2x.png 2x" alt="Loods 5" loading="lazy" />
-          </picture>
-        </a>
-        <a class="partner-logo" href="https://www.sohome.nl/jesper_home.html" target="_blank" rel="noopener noreferrer">
-          <picture>
-            <source srcset="./assets/sohome_1x.webp 1x, ./assets/sohome_2x.webp 2x" type="image/webp" />
-            <img src="./assets/sohome_1x.png" srcset="./assets/sohome_1x.png 1x, ./assets/sohome_2x.png 2x" alt="Sohome" loading="lazy" />
-          </picture>
-        </a>
-      </div>
-    </section>
-
-    <section id="services" class="showroom">
-      <div class="showroom-panel">
-        <div class="showroom-panel-inner">
-          <img src="./assets/JH_Makio_Launo.jpg" alt="Showroom in Netherlands, Haarlem" />
-        </div>
-      </div>
-      <div class="showroom-copy">
-        <p class="eyebrow">Showroom</p>
-        <h3>A space devoted to our world</h3>
-        <p class="showroom-description">
-          We have a showroom dedicated to our world and products in the Netherlands (Haarlem).
-
+    <section class="services-grid" aria-label="Waarom teams de Modeus configurator gebruiken">
+      <article class="service-card">
+        <p class="eyebrow">01</p>
+        <h3>2-in-1: offerte &amp; order</h3>
+        <p>
+          Toon configuraties zonder inkoopdetails te delen, en schakel daarna naar buyer mode om dezelfde configuratie om te zetten in een order -
+          minder fouten, minder copy-paste.
         </p>
-        <button class="ghost-btn">Schedule a visit</button>
-      </div>
-      
+      </article>
+      <article class="service-card">
+        <p class="eyebrow">02</p>
+        <h3>Aangepast aan uw merk</h3>
+        <p>Uw logo en kleuren in de configurator, zodat klantpresentaties voelen als uw showroom en niet als generieke software.</p>
+      </article>
+      <article class="service-card">
+        <p class="eyebrow">03</p>
+        <h3>Made to order - minder afval</h3>
+        <p>
+          Elk meubel wordt geproduceerd volgens specificatie. Dat ondersteunt een zero-waste, made-to-order werkwijze: u hoeft geen voorraad te
+          pushen die niet beweegt.
+        </p>
+      </article>
+      <article class="service-card">
+        <p class="eyebrow">04</p>
+        <h3>Meer omzetkansen</h3>
+        <p>
+          Snellere beslissingen, duidelijkere upgrades en een soepelere route van goedgekeurd ontwerp naar order - zodat marge niet verdwijnt in
+          e-mailthreads.
+        </p>
+      </article>
     </section>
 
+    <section class="brand-highlights configurator-workflow" aria-label="Hoe de configurator werkt">
+      <div class="section-heading">
+        <p class="eyebrow">Hoe het werkt</p>
+        <h2>Van eerste indruk tot aankoop</h2>
+      </div>
+      <div class="highlight-card">
+        <p class="eyebrow">Stap 01</p>
+        <h3>Configureer in 3D</h3>
+        <p>Draai, vergelijk en shortlist modellen met klanten terwijl iedere optie visueel en duidelijk blijft.</p>
+        <img
+          class="configurator-card-image"
+          src="/assets/presentation.png"
+          alt="Presentatiemodus in de Modeus configurator met geopende stofopties"
+        />
+      </div>
+      <div class="highlight-card">
+        <p class="eyebrow">Stap 02</p>
+        <h3>Bewaar offertes</h3>
+        <p>Pak morgen verder op of deel intern zonder dezelfde stoelconfiguratie opnieuw op te bouwen.</p>
+        <img
+          class="configurator-card-image"
+          src="/assets/save-quote.png"
+          alt="Offertepaneel in de Modeus configurator met knoppen om een offerte op te slaan en te versturen"
+        />
+      </div>
+      <div class="highlight-card">
+        <p class="eyebrow">Stap 03</p>
+        <h3>Bestel wanneer u klaar bent</h3>
+        <p>Gebruik dezelfde configuratie met uw accountregels en commerciele setup.</p>
+        <img
+          class="configurator-card-image"
+          src="/assets/buyer.png"
+          alt="Buyer mode in de Modeus configurator met winkelwagenknop"
+        />
+      </div>
+    </section>
 
+    <section class="brand-overview" aria-label="Voor wie de configurator is">
+      <div class="brand-overview-text">
+        <p class="eyebrow">Gebouwd voor professionele kopers</p>
+        <h2>Een link voor de hele dealcyclus</h2>
+        <p>
+          De configurator ondersteunt teams die eerst offreren en daarna bestellen. Gebruik presentatiemodus voor het klantgesprek en buyer mode
+          wanneer inkoopdetails belangrijk worden.
+        </p>
+        <p class="option-label">Voor wie</p>
+        <ul class="service-list">
+          <li>Dealers en verkopers van contractmeubilair</li>
+          <li>Showroom- en projectteams</li>
+        </ul>
+        <p>Presentatie voor de klant. Buyer mode voor uw inkoopworkflow.</p>
+      </div>
+      <div class="brand-overview-highlights">
+        <article>
+          <p class="stat">Klantklaar</p>
+          <p class="label">Toon de stoel, niet de inkoopomgeving</p>
+        </article>
+        <article>
+          <p class="stat">Accountgericht</p>
+          <p class="label">Toegang en prijzen gekoppeld aan uw geverifieerde bedrijf</p>
+        </article>
+        <article>
+          <p class="stat">Stofbundels</p>
+          <p class="label">Elke stofoptie zit in de swatchbundel, zodat u de juiste stof voor uw project kunt kiezen</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="brand-highlights" aria-label="Vertrouwen en duidelijkheid">
+      <div class="highlight-card">
+        <p class="eyebrow">Veilig</p>
+        <h3>Veilig inloggen &amp; bedrijfsaccounts</h3>
+        <p>Houd inkoopworkflows gekoppeld aan uw bedrijfsaccount.</p>
+      </div>
+      <div class="highlight-card">
+        <p class="eyebrow">Internationaal</p>
+        <h3>Meertalige ondersteuning</h3>
+        <p>Ondersteun internationale projecten en teams met een configuratorervaring voor meerdere markten.</p>
+      </div>
+      <div class="highlight-card">
+        <p class="eyebrow">Onboarding</p>
+        <h3>Persoonlijke onboarding</h3>
+        <p>We helpen uw team de workflow te begrijpen en vanaf dag een waarde uit de configurator te halen.</p>
+      </div>
+    </section>
+
+    <section class="landing-faq" aria-label="Veelgestelde vragen">
+      <div class="landing-faq-header">
+        <p class="eyebrow">FAQ</p>
+        <h2>Veelgestelde vragen over de configurator</h2>
+        <p>Duidelijke antwoorden voor teams die zich aanmelden, offertes maken en bestellen met Modeus.</p>
+      </div>
+
+      <div class="landing-faq-items">
+        <details>
+          <summary>Is inschrijven echt gratis?</summary>
+          <div class="landing-faq-answer">
+            <p>
+              Ja - registratie is gratis. Toegang is gekoppeld aan uw bedrijf, zodat u de juiste commerciele setup ziet.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Wat betekent "2-in-1"?</summary>
+          <div class="landing-faq-answer">
+            <p>
+              Presentatieworkflows, zoals offertes en klantsessies, en buyer workflows, zoals winkelwagen en bestellen, zitten in een tool.
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Kunnen we onze eigen branding gebruiken?</summary>
+          <div class="landing-faq-answer">
+            <p>Ja - pas de ervaring aan uw merk aan voor klantgerichte sessies.</p>
+          </div>
+        </details>
+      </div>
+    </section>
 
     <section class="cta-partner">
       <div class="cta-content">
-        <p class="eyebrow">For companies</p>
-        <h3>Become a Modeus partner</h3>
+        <p class="eyebrow">2-in-1 configurator</p>
+        <h3>Geef uw team een configureerbare link</h3>
         <p class="cta-text">
-          Unlock configurator access, co-branded assets, and stocked hero products ready for your next interior rollout.
+          2-in-1 offertes en bestellen. Uw merk. Made to order voor minder afval. Meer omzet door snellere, schonere conversie.
         </p>
       </div>
-      <a class="cta-button" href="https://orderportal.modeus.com/login?signup=yes" target="_blank" rel="noopener noreferrer">
-        Register as partner
-      </a>
+      <a
+        id="cta-partner-configurator-bottom"
+        class="cta-button"
+        href="https://configurator.modeus.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Schrijf u gratis in</a
+      >
     </section>
 
-    <a class="partner-login" href="https://orderportal.modeus.com/login?signup=yes" target="_blank" rel="noopener noreferrer">Become a partner</a>
-
+    <a class="partner-login" href="https://orderportal.modeus.com/login?signup=yes" target="_blank" rel="noopener noreferrer">Word partner</a>
 
     <footer class="site-footer">
       <div class="footer-talk">
         <h2 class="footer-talk-heading">
           Let's talk
-          <span class="chair-word">
-            ch<span class="chair-model-inline"><canvas class="chair-canvas"></canvas></span>irs!
-          </span>
+          <span class="chair-word"> ch<span class="chair-model-inline"><canvas class="chair-canvas"></canvas></span>irs! </span>
         </h2>
         <a
           class="footer-partner-btn"
@@ -275,35 +303,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           target="_blank"
           rel="noopener noreferrer"
         >
-          Become a partner
+          Word partner
           <span class="arrow">→</span>
         </a>
       </div>
       <div class="footer-top">
         <div>
           <p class="logo">Modeus</p>
-          <p class="footer-description">
-            Designed in the Netherlands.<br>From configurator to showroom.
-          </p>
+          <p class="footer-description">Ontworpen in Nederland.<br />Van configurator tot showroom.</p>
         </div>
         <div class="footer-pages">
-          <p class="footer-label">Pages</p>
-          <a href="./about.html">About us</a>
-          <a href="./configurator.html">3D Configurator</a>
-          <a href="./brand.html">Brand</a>
-          <a href="./services.html">Services</a>
-          <a href="./careers.html">Careers</a>
-          
-          <a href="./get-in-touch.html">Get in touch</a>
+          <p class="footer-label">Pagina's</p>
+          <a href="/nl/about">Over ons</a>
+          <a href="https://configurator.modeus.com/" target="_blank" rel="noopener noreferrer">3D Configurator</a>
+          <a href="/nl/brand">Merk</a>
+          <a href="/nl/services">Diensten</a>
+          <a href="/nl/careers">Vacatures</a>
+
+          <a href="/nl/get-in-touch">Neem contact op</a>
         </div>
         <div class="footer-social">
           <p class="footer-label">Social</p>
-           <a href="https://www.instagram.com/jesperhome/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.instagram.com/jesperhome/?hl=en" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href="https://nl.linkedin.com/company/modeus-bv" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
         <div class="footer-offices">
-          <p class="footer-label">OFFICES</p>
-          <p class="footer-address">JAN VAN KRIMPENWEG 7M<br/> 2031 CE HAARLEM<br/> THE NETHERLANDS</p>
+          <p class="footer-label">KANTOREN</p>
+          <p class="footer-address">JAN VAN KRIMPENWEG 7M<br />2031 CE HAARLEM<br />NEDERLAND</p>
         </div>
         <div class="footer-contact">
           <p class="footer-label">Contact</p>
@@ -312,27 +338,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© Modeus — all rights reserved</p>
+        <p>© Modeus - alle rechten voorbehouden</p>
         <div class="footer-links">
-          <a href="./privacy.html">Privacy</a>
-          <a href="./terms.html">Terms</a>
+          <a href="/nl/privacy">Privacy</a>
+          <a href="/nl/terms">Voorwaarden</a>
         </div>
       </div>
     </footer>
+
     <div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
       <div class="cookie-banner__content">
-        <p>We use cookies to measure site usage and improve your experience. <a href="./privacy.html">Learn more</a>.</p>
+        <p>
+          We gebruiken cookies om het sitegebruik te meten en uw ervaring te verbeteren.
+          <a href="/nl/privacy">Lees meer</a>.
+        </p>
         <div class="cookie-banner__actions">
-          <button class="cookie-btn cookie-reject" type="button">Reject</button>
-          <button class="cookie-btn cookie-accept" type="button">Accept</button>
+          <button class="cookie-btn cookie-reject" type="button">Weigeren</button>
+          <button class="cookie-btn cookie-accept" type="button">Accepteren</button>
         </div>
       </div>
     </div>
-
-
-    
-
-
 
     <script src="https://unpkg.com/lenis@1.1.16/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
@@ -340,6 +365,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="./script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>
